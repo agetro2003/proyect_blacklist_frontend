@@ -1,12 +1,23 @@
 import React, { useEffect } from "react";
+import './home.css'
 
-
+import Navbar from "../Navbar/navbar";
 const Home = () => {
     return(
         <div>
-            <h1>
+            <Navbar></Navbar>
+            <section id="inicio">
                 test
-            </h1>
+            </section>
+            <section id="planes">
+                planes
+            </section>
+            <section id="opiniones">
+                opiniones
+            </section>
+            <section id="contacto">
+                contactos
+            </section>
         </div>
     );
 };
