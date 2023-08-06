@@ -2,11 +2,20 @@ import React, { useEffect } from "react";
 
 
 const Home = () => {
-    return(
+    return (
         <div>
-            <h1>
-                test
-            </h1>
+            <h1>Proyect Blacklist</h1>
+            <ul>test</ul>
+            <ul>test</ul>
+            <ul>test</ul>
+            <ul>test</ul>
+            <ul>test</ul>
+            <ul>test</ul>
+            <ul>test</ul>
+            <ul>test</ul>
+            <div>
+                <h2>test</h2>
+            </div>
         </div>
     );
 };
