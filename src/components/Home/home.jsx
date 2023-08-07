@@ -3,11 +3,22 @@ import './home.css'
 
 import Navbar from "../Navbar/navbar";
 const Home = () => {
-    return(
+    return (
         <div>
             <Navbar></Navbar>
             <section id="inicio">
-                test
+                <h1>Proyect Blacklist</h1>
+            <ul>test</ul>
+            <ul>test</ul>
+            <ul>test</ul>
+            <ul>test</ul>
+            <ul>test</ul>
+            <ul>test</ul>
+            <ul>test</ul>
+            <ul>test</ul>
+            <div>
+                <h2>test</h2>
+            </div>
             </section>
             <section id="planes">
                 planes
@@ -18,6 +29,7 @@ const Home = () => {
             <section id="contacto">
                 contactos
             </section>
+
         </div>
     );
 };
