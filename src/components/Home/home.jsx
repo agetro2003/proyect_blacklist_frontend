@@ -1,32 +1,24 @@
 import React, { useEffect } from "react";
-import './home.css'
+import styles from './home.module.css'
 
 import Navbar from "../Navbar/navbar";
 const Home = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <section id="inicio">
+            <section className={styles.section} id="inicio">
                 <h1>Proyect Blacklist</h1>
-            <ul>test</ul>
-            <ul>test</ul>
-            <ul>test</ul>
-            <ul>test</ul>
-            <ul>test</ul>
-            <ul>test</ul>
-            <ul>test</ul>
-            <ul>test</ul>
             <div>
                 <h2>test</h2>
             </div>
             </section>
-            <section id="planes">
+            <section className={styles.section} id="planes">
                 planes
             </section>
-            <section id="opiniones">
+            <section className={styles.section} id="opiniones">
                 opiniones
             </section>
-            <section id="contacto">
+            <section className={styles.section} id="contacto">
                 contactos
             </section>
 
