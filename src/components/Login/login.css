@@ -85,7 +85,7 @@ display: none;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   perspective: 800px;
-  #margin-top: 60px;
+  margin-top: 60px;
 }
 .card-3d-wrapper {
   width: 100%;

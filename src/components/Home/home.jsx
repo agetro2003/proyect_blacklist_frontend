@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styles from './home.module.css'
-
+import Pricing from "../Pricing/pricing";
 import Navbar from "../Navbar/navbar";
 const Home = () => {
     return (
@@ -13,7 +13,7 @@ const Home = () => {
             </div>
             </section>
             <section className={styles.section} id="planes">
-                planes
+                <Pricing></Pricing>
             </section>
             <section className={styles.section} id="opiniones">
                 opiniones
