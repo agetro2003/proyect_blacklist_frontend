@@ -1,0 +1,42 @@
+* {
+    font-family: "Chivo Mono", monospace; 
+    /* background-color: #060713; */
+}
+
+.Nav-bar {
+    display: flex;
+    gap: 72px;
+}
+
+.Nav-bar > li {
+    list-style: none;
+}
+
+.Nav-bar > li a {
+    font-size: 26px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    padding: 10px;
+    transition: 0.5s ease;
+}
+
+.Nav-bar:hover > li a {
+    color: #30edf4;
+}
+
+.Nav-bar:hover > li a:not(:hover) {
+    color: white;
+    opacity: 0.3;
+    filter: blur(1px);
+}
+
+#name {
+    font-size: 26px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white; 
+}
+

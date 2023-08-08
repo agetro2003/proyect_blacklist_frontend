@@ -37,7 +37,7 @@ Inspired by the dribble shot http://dribbble.com/shots/1285240-Freebie-Flat-Pric
 }
 
 body {
-    background: #F2F2F2;
+    /* background: #F2F2F2; */
     font-family: 'Droid Sans', sans-serif;
     line-height: 1;
     font-size: 16px;    
@@ -121,7 +121,7 @@ body {
 }
 .features{
     list-style-type: none;    
-    background: #ffffff;
+    background: #F3DEC8;
     text-align: left;
     color: #692c2c;
     padding:30px 22%;
@@ -223,7 +223,7 @@ a {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #000000;
+    background-color: #f3f3f3;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }

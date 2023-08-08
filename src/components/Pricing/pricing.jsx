@@ -31,7 +31,7 @@ const Pricing = () => {
                     {/* <!-- FEATURES --> */}
                     <ul className="features">
                         <li><span className="fontawesome-cog"></span>Access to Services</li>
-                        <li><span className="fontawesome-star"></span>10 Request</li>
+                        <li><span className="fontawesome-star"></span>10 Request /mo</li>
                         <li><span className="fontawesome-dashboard"></span> # </li>
                         <li><span className="fontawesome-cloud"></span> # </li>
                     </ul>
@@ -63,10 +63,10 @@ const Pricing = () => {
                     {/* <!-- /CONTENT --> */}
                     {/* <!-- FEATURES --> */}
                     <ul className="features">
-                        <li><span className="fontawesome-cog"></span>10 WordPress Install</li>
-                        <li><span className="fontawesome-star"></span>100,000 visits/mo.</li>
-                        <li><span className="fontawesome-dashboard"></span>Unlimited Data Transfer</li>
-                        <li><span className="fontawesome-cloud"></span>20GB Local Storage</li>
+                        <li><span className="fontawesome-cog"></span>Access to Services</li>
+                        <li><span className="fontawesome-star"></span>50 Request /mo.</li>
+                        <li><span className="fontawesome-dashboard"></span>#</li>
+                        <li><span className="fontawesome-cloud"></span>#</li>
                     </ul>
                     {/* <!-- /FEATURES --> */}
                     {/* <!-- PT-FOOTER --> */}
@@ -97,10 +97,10 @@ const Pricing = () => {
 
                     {/* <!-- FEATURES --> */}
                     <ul className="features">
-                        <li><span className="fontawesome-cog"></span>25 WordPress Install</li>
-                        <li><span className="fontawesome-star"></span>400,000 visits/mo.</li>
-                        <li><span className="fontawesome-dashboard"></span>Unlimited Data Transfer</li>
-                        <li><span className="fontawesome-cloud"></span>30GB Local Storage</li>
+                        <li><span className="fontawesome-cog"></span>Access to Services</li>
+                        <li><span className="fontawesome-star"></span>100 Request /mo.</li>
+                        <li><span className="fontawesome-dashboard"></span> # </li>
+                        <li><span className="fontawesome-cloud"></span> # </li>
                     </ul>
                     {/* <!-- /FEATURES --> */}
 
