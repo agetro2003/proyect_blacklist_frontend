@@ -8,6 +8,8 @@ import Home from "./components/Home/home";
 import Login from "./components/Login/Login";
 import Pricing from './components/Pricing/pricing';
 import Main from './components/Main/Main';
+import Dashboard from "./components/Dashboard/dashboard";
+// import Blog from "./components/Blog/Blog";
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
         <Route exact path="/Login" element={<Login />}/>
         <Route exact path="/Pricing" element={<Pricing />}/>
         <Route exact path='/Main' element={<Main/>}></Route>
+        <Route exact path='/Dashboard' element={<Dashboard/>}></Route>
+        {/* <Route exact path='/Blog' element={<Blog/>}></Route> */}
       </Routes>
     </Router>
 
