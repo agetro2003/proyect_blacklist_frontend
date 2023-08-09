@@ -8,6 +8,7 @@ import Home from "./components/Home/home";
 import Login from "./components/Login/Login";
 import Pricing from './components/Pricing/pricing';
 import Main from './components/Main/Main';
+import Test from './components/Test/Test';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/Login" element={<Login />}/>
         <Route exact path="/Pricing" element={<Pricing />}/>
         <Route exact path='/Main' element={<Main/>}></Route>
+        <Route exact path='/Test' element={<Test/>}></Route>
       </Routes>
     </Router>
 
