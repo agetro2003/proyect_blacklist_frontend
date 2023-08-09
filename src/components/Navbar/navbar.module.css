@@ -1,0 +1,31 @@
+.navbar {
+    background-color: black;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.ul{
+    width: 100%;
+    list-style-type: none;
+    display: flex; 
+    justify-content: space-around;
+}
+
+.li {
+    background-color: darkslategray;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 10%;
+    }
+
+
+.a {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
