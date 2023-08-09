@@ -1,7 +1,19 @@
 import React, { useEffect } from "react";
-import "./login.css";
+import "./login.css"
+import { useLocalStorage } from "../../hooks/useLocalStorage.js";;
 
 const Login = () => {
+ const [isLog, setLogin] = useLocalStorage('session', '')
+    const handleLogin = ()=>{
+        let pswd = '123456'
+        if (pswd == "123456") {
+ 
+            let date = new Date()
+            alert(date)
+            setLogin(date)
+        }
+    }
+
     return (
         <div className="section">
             <div className="container">
@@ -26,7 +38,7 @@ const Login = () => {
                                                     <i className="input-icon uil uil-lock-alt"></i>
                                                 </div>
                                                 <div className="login-boton-holder">
-                                                    <a href="#" className="btn mt-4">Login</a>
+                                                    <button onClick={handleLogin} className="btn mt-4">Login</button>
                                                 </div>
                                                 <p className="mb-0 text-center"><a href="#" className="link">Forgot your password?</a></p>
                                             </div>
