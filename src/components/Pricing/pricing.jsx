@@ -148,8 +148,8 @@ function Copyright(props) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
             {'Copyright © '}
-            <Link color="inherit" href="https://mui.com/">
-                Your Website
+            <Link color="inherit" href="#">
+                Insane Domains
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -238,24 +238,24 @@ export default function Pricing() {
             >
                 <Toolbar sx={{ flexWrap: 'wrap' }}>
                     <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-                        Company name
+                        Dominio de Correos Insanos
                     </Typography>
                     <nav>
                         <Link
                             variant="button"
                             color="text.primary"
-                            href="#"
+                            href="/"
                             sx={{ my: 1, mx: 1.5 }}
                         >
-                            Features
+                            Home
                         </Link>
                         <Link
                             variant="button"
                             color="text.primary"
-                            href="#"
+                            href="/Pricing"
                             sx={{ my: 1, mx: 1.5 }}
                         >
-                            Enterprise
+                            Pricing
                         </Link>
                         <Link
                             variant="button"
@@ -266,7 +266,7 @@ export default function Pricing() {
                             Support
                         </Link>
                     </nav>
-                    <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
+                    <Button href="/Login" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
                         Login
                     </Button>
                 </Toolbar>

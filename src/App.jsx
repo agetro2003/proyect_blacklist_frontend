@@ -12,6 +12,7 @@ import Test from './components/Test/Test';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import UnAuthorized from './components/UnAuthorized/UnAuthorized';
 import ProtectedRoute from './components/ProtectedRoute';
+import Dashboard from './components/Dashboard/Dashboard';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         </Route>
         <Route exact path='/*' element={<PageNotFound/>}></Route>
         <Route exact path='/LogOut' element={<UnAuthorized/>}></Route>
+        <Route exact path='/Dashboard' element={<Dashboard/>}></Route>
       </Routes>
     </Router>
 
