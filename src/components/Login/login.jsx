@@ -17,7 +17,8 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
-
+import { CircularProgress } from "@mui/material";
+import { styled } from '@mui/system';
 
 function Copyright(props) {
     return (
@@ -60,6 +61,7 @@ const footers = [
 const defaultTheme = createTheme();
 
 const Login = () => {
+const [loading, setLoading] = useState(true)
  const [isLog, setLogin] = useLocalStorage('session', '')
  const [data, setData] = useState({
     name: "",
@@ -77,7 +79,7 @@ const Login = () => {
         setData(newData)
     }
     const handleLogin = ()=>{
-
+        setLoading(true)
         let loginData = {
             mail: data.mail,
             pswd: data.pswd
@@ -88,19 +90,38 @@ const Login = () => {
         if (pswd == "123456") {
 
             let date = new Date()
-            alert(date)
             setLogin(date)
+            setLoading(false)
+            window.location.assign('main')
         }
     }
 
     const handleRegister = () => {
+        setLoading(true)
         console.log(data)
+        setLoading(false)
+
     }
 
     return (
 
         // Navbar
         <ThemeProvider theme={defaultTheme}>
+             {loading && (<CircularProgress
+                                    size={64}
+                                    sx={
+                                        {
+                                            color: 'blue',
+                                            position: 'fixed',
+                                            top: 0,
+                                            left: 0,
+                                            right: 0,
+                                            bottom: 0,
+                                            margin: 'auto',
+                                            zIndex: 9999,
+                                        }
+                                    }
+                                    />)}
             <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
             <CssBaseline />
             <AppBar
@@ -144,7 +165,7 @@ const Login = () => {
                     </Button>
                 </Toolbar>
             </AppBar>
-
+            {}
             <div className="section">
                 <div className="container">
                     <div className="row full-height justify-content-center">
