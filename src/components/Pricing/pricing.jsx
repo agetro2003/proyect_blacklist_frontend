@@ -148,7 +148,7 @@ function Copyright(props) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
             {'Copyright © '}
-            <Link color="inherit" href="#">
+            <Link color="inherit" href="/">
                 Insane Domains
             </Link>{' '}
             {new Date().getFullYear()}
@@ -160,6 +160,7 @@ function Copyright(props) {
 const tiers = [
     {
         title: 'Free',
+        subheader: 'For Beginners',
         price: '0',
         description: [
             '10 users included',
@@ -185,6 +186,7 @@ const tiers = [
     },
     {
         title: 'Enterprise',
+        subheader: 'Premium Services',
         price: '30',
         description: [
             '50 users included',
@@ -222,11 +224,12 @@ const footers = [
     },
 ];
 
-// TODO remove, this demo shouldn't need to reset the theme.
+
 const defaultTheme = createTheme();
 
 export default function Pricing() {
     return (
+        // Navbar
         <ThemeProvider theme={defaultTheme}>
             <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
             <CssBaseline />
@@ -271,6 +274,7 @@ export default function Pricing() {
                     </Button>
                 </Toolbar>
             </AppBar>
+            {/* End Navbar */}
             {/* Hero unit */}
             <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
                 <Typography
@@ -283,9 +287,7 @@ export default function Pricing() {
                     Pricing
                 </Typography>
                 <Typography variant="h5" align="center" color="text.secondary" component="p">
-                    Quickly build an effective pricing table for your potential customers with
-                    this layout. It&apos;s built with default MUI components with little
-                    customization.
+                    Contamos con una variedad de planes que se ajustan a sus neceidades
                 </Typography>
             </Container>
             {/* End hero unit */}
@@ -311,7 +313,7 @@ export default function Pricing() {
                                     }}
                                     sx={{
                                         backgroundColor: (theme) =>
-                                            theme.palette.mode === 'light'
+                                            theme.palette.mode === 'light' 
                                                 ? theme.palette.grey[200]
                                                 : theme.palette.grey[700],
                                     }}

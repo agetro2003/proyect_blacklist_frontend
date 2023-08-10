@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState } from 'react'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+// import './App.css'
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home/home";
@@ -19,15 +19,15 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/"  element={ <Home />}/>
-        <Route exact path="/Login" element={<Login />}/>
-        <Route exact path="/Pricing" element={<Pricing />}/>
-        <Route element={<ProtectedRoute/>}>
-        <Route exact path='/Main' element={<Main/>}></Route>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/Login" element={<Login />} />
+        <Route exact path="/Pricing" element={<Pricing />} />
+        <Route element={<ProtectedRoute />}>
+          <Route exact path='/Main' element={<Main />}></Route>
         </Route>
-        <Route exact path='/*' element={<PageNotFound/>}></Route>
-        <Route exact path='/LogOut' element={<UnAuthorized/>}></Route>
-        <Route exact path='/Dashboard' element={<Dashboard/>}></Route>
+        <Route exact path='/*' element={<PageNotFound />}></Route>
+        <Route exact path='/LogOut' element={<UnAuthorized />}></Route>
+        <Route exact path='/Dashboard' element={<Dashboard />}></Route>
       </Routes>
     </Router>
 

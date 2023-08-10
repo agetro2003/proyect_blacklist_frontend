@@ -16,22 +16,6 @@ import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 
-// import "./home.css"
-
-// const Home = () => {
-//     return (
-//         <div className="navigation">
-//             <ul className="Nav-bar">
-//                 <li id="name">NavBar</li>
-//                 <li><a href="/">Home</a></li>
-//                 <li><a href="/work">Work</a></li>
-//                 <li><a href="/services">Services</a></li>
-//                 <li><a href="/contact">Contact</a></li>
-//             </ul>
-
-// import styles from './home.module.css'
-// import Pricing from "../Pricing/pricing";
-// import Navbar from "../Navbar/navbar";
 // import MainHome from "../MainHome/mainHome";
 
 function Copyright(props) {
@@ -122,7 +106,7 @@ const Home = () => {
                 </Toolbar>
             </AppBar>
 
-
+            {/* Contenido Pendiente */}
 
             {/* Footer */}
             <Container
