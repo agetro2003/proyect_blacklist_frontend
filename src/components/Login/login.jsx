@@ -17,8 +17,7 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
-import { CircularProgress } from "@mui/material";
-import { styled } from '@mui/system';
+import Overlay from "../Overlay/Overlay";
 
 function Copyright(props) {
     return (
@@ -107,21 +106,10 @@ const [loading, setLoading] = useState(true)
 
         // Navbar
         <ThemeProvider theme={defaultTheme}>
-             {loading && (<CircularProgress
-                                    size={64}
-                                    sx={
-                                        {
-                                            color: 'blue',
-                                            position: 'fixed',
-                                            top: 0,
-                                            left: 0,
-                                            right: 0,
-                                            bottom: 0,
-                                            margin: 'auto',
-                                            zIndex: 9999,
-                                        }
-                                    }
-                                    />)}
+             {loading && (
+             <Overlay>
+             </Overlay>
+             )}
             <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
             <CssBaseline />
             <AppBar
