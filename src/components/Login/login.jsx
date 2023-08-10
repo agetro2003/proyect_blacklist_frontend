@@ -1,10 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./login.css"
 import { useLocalStorage } from "../../hooks/useLocalStorage.js";;
 
 const Login = () => {
  const [isLog, setLogin] = useLocalStorage('session', '')
+ const [data, setData] = useState({
+    name: "",
+    number: "",
+    pswd: "",
+    mail: ""
+ })
+
+    const handleInputs = (e) => {
+        const {name, value} = e.target;
+        const newData = {
+            ...data,
+            [name]: value
+        }
+        setData(newData)
+    }
     const handleLogin = ()=>{
+        
+        let loginData = {
+            mail: data.mail,
+            pswd: data.pswd
+        }
+        console.log(loginData)
         let pswd = '123456'
         if (pswd == "123456") {
  
@@ -12,6 +33,10 @@ const Login = () => {
             alert(date)
             setLogin(date)
         }
+    }
+
+    const handleRegister = () => {
+        console.log(data)
     }
 
     return (
@@ -30,11 +55,11 @@ const Login = () => {
                                             <div className="section text-center">
                                                 <h4 className="mb-4 pb-3 login-titulo">Log In</h4>
                                                 <div className="form-group">
-                                                    <input type="email" className="form-style" placeholder="Email" />
+                                                    <input onChange={handleInputs}  name="mail" type="email" value={data.mail} className="form-style" placeholder="Email" />
                                                     <i className="input-icon uil uil-at"></i>
                                                 </div>
                                                 <div className="form-group mt-2">
-                                                    <input type="password" className="form-style" placeholder="Password" />
+                                                    <input onChange={handleInputs} name="pswd" type="password" value={data.pswd} className="form-style" placeholder="Password" />
                                                     <i className="input-icon uil uil-lock-alt"></i>
                                                 </div>
                                                 <div className="login-boton-holder">
@@ -49,23 +74,23 @@ const Login = () => {
                                             <div className="section text-center">
                                                 <h4 className="mb-3 pb-3 login-titulo">Sign Up</h4>
                                                 <div className="form-group">
-                                                    <input type="text" className="form-style" placeholder="Full Name" />
+                                                    <input onChange={handleInputs} name="name" type="text" value={data.name} className="form-style" placeholder="Full Name" />
                                                     <i className="input-icon uil uil-user"></i>
                                                 </div>
                                                 <div className="form-group mt-2">
-                                                    <input type="tel" className="form-style" placeholder="Phone Number" />
+                                                    <input onChange={handleInputs} name="number" type="tel" value={data.number} className="form-style" placeholder="Phone Number" />
                                                     <i className="input-icon uil uil-phone"></i>
                                                 </div>
                                                 <div className="form-group mt-2">
-                                                    <input type="email" className="form-style" placeholder="Email" />
+                                                    <input onChange={handleInputs} name="mail" type="email" value={data.mail} className="form-style" placeholder="Email" />
                                                     <i className="input-icon uil uil-at"></i>
                                                 </div>
                                                 <div className="form-group mt-2">
-                                                    <input type="password" className="form-style" placeholder="Password" />
+                                                    <input onChange={handleInputs} name="pswd" type="password" value={data.pswd} className="form-style" placeholder="Password" />
                                                     <i className="input-icon uil uil-lock-alt"></i>
                                                 </div>
                                                 <div className="login-boton-holder">
-                                                  <a href="#" className="btn mt-4">Register</a>
+                                                  <button onClick={handleRegister} className="btn mt-4">Register</button>
                                                 </div>
                                             </div>
                                         </div>
