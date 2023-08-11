@@ -1,7 +1,7 @@
 import styles from './overlay.module.css'
 import { CircularProgress } from "@mui/material";
 
-const Overlay = (props) => {
+const Overlay = () => {
 
     return (
         <div className={styles.overlay}>

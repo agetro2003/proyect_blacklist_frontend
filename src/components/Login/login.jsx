@@ -18,6 +18,7 @@ import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 import Overlay from "../Overlay/Overlay";
+import Alert from "../Alert/Alert";
 
 function Copyright(props) {
     return (
@@ -60,7 +61,8 @@ const footers = [
 const defaultTheme = createTheme();
 
 const Login = () => {
-const [loading, setLoading] = useState(true)
+const [alert, setAlert] = useState(false) 
+const [loading, setLoading] = useState(false)
  const [isLog, setLogin] = useLocalStorage('session', '')
  const [data, setData] = useState({
     name: "",
@@ -91,6 +93,7 @@ const [loading, setLoading] = useState(true)
             let date = new Date()
             setLogin(date)
             setLoading(false)
+            setAlert(true)
             window.location.assign('main')
         }
     }
@@ -99,13 +102,16 @@ const [loading, setLoading] = useState(true)
         setLoading(true)
         console.log(data)
         setLoading(false)
-
+        setAlert(true)
     }
 
     return (
 
         // Navbar
         <ThemeProvider theme={defaultTheme}>
+            {alert && (
+                <Alert open={alert} setOpen={setAlert} title={"Error"} content={"Ha ocurrido un error"}></Alert>
+            )}
              {loading && (
              <Overlay>
              </Overlay>
