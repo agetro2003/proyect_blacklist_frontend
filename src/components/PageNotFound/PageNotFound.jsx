@@ -1,22 +1,161 @@
-import React from "react"
-import { Button } from "@mui/base/Button"
-import "./PageNotFound.css"
+// import React from "react"
+// import { Button } from "@mui/base/Button"
+// import "./PageNotFound.css"
+
+import React, { useEffect } from "react";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+// import Card from '@mui/material/Card';
+// import CardActions from '@mui/material/CardActions';
+// import CardContent from '@mui/material/CardContent';
+// import CardHeader from '@mui/material/CardHeader';
+import CssBaseline from '@mui/material/CssBaseline';
+import Grid from '@mui/material/Grid';
+// import StarIcon from '@mui/icons-material/StarBorder';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
+import GlobalStyles from '@mui/material/GlobalStyles';
+import Container from '@mui/material/Container';
+
+
+function Copyright(props) {
+    return (
+        <Typography variant="body2" color="text.secondary" align="center" {...props}>
+            {'Copyright © '}
+            <Link color="inherit" href="#">
+                Insane Domains
+            </Link>{' '}
+            {new Date().getFullYear()}
+            {'.'}
+        </Typography>
+    );
+}
+
+const footers = [
+    {
+        title: 'Company',
+        description: ['Team', 'History', 'Contact us', 'Locations'],
+    },
+    {
+        title: 'Features',
+        description: [
+            'Cool stuff',
+            'Random feature',
+            'Team feature',
+            'Developer stuff',
+            'Another one',
+        ],
+    },
+    {
+        title: 'Resources',
+        description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
+    },
+    {
+        title: 'Legal',
+        description: ['Privacy policy', 'Terms of use'],
+    },
+];
+
+const defaultTheme = createTheme();
+
 
 const PageNotFound = () => {
-
-
     return (
-        <>
-            <h1>Not Found</h1>
-            <br />
-            <div>
-                <Button>
-                    <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024"><path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path></svg>
-                    <span><a href="/">Regresar</a></span>
-                </Button>
-            </div>
-        </>
+        // Navbar
+        <ThemeProvider theme={defaultTheme}>
+            <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
+            <CssBaseline />
+            <AppBar
+                position="static"
+                color="default"
+                elevation={0}
+                sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
+            >
+                <Toolbar sx={{ flexWrap: 'wrap' }}>
+                    <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+                        Dominio de Correos Insanos
+                    </Typography>
+                    <nav>
+                        <Link
+                            variant="button"
+                            color="text.primary"
+                            href="#"
+                            sx={{ my: 1, mx: 1.5 }}
+                        >
+                            Support
+                        </Link>
+                    </nav>
+                    {/* <Button href="/Login" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
+                        Login
+                    </Button> */}
+                </Toolbar>
+            </AppBar>
 
+            <Box
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    minHeight: '100vh'
+                }}
+            >
+                <Container maxWidth="md">
+                    <Grid container spacing={2}>
+                        <Grid xs={6}>
+                            <Typography variant="h1">
+                                404
+                            </Typography>
+                            <Typography variant="h6">
+                                The page you’re looking for doesn’t exist.
+                            </Typography>
+                            <Button variant="contained" href="/" >Back Home</Button>
+                        </Grid>
+                        <Grid xs={6}>
+                            <img
+                                src="https://cdn.pixabay.com/photo/2017/03/09/12/31/error-2129569__340.jpg"
+                                alt=""
+                                width={500} height={250}
+                            />
+                        </Grid>
+                    </Grid>
+                </Container>
+            </Box>
+
+            {/* Footer */}
+            <Container
+                maxWidth="md"
+                component="footer"
+                sx={{
+                    borderTop: (theme) => `1px solid ${theme.palette.divider}`,
+                    mt: 8,
+                    py: [3, 6],
+                }}
+            >
+                <Grid container spacing={4} justifyContent="space-evenly">
+                    {footers.map((footer) => (
+                        <Grid item xs={6} sm={3} key={footer.title}>
+                            <Typography variant="h6" color="text.primary" gutterBottom>
+                                {footer.title}
+                            </Typography>
+                            <ul>
+                                {footer.description.map((item) => (
+                                    <li key={item}>
+                                        <Link href="#" variant="subtitle1" color="text.secondary">
+                                            {item}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </Grid>
+                    ))}
+                </Grid>
+                <Copyright sx={{ mt: 5 }} />
+            </Container>
+            {/* End footer */}
+        </ThemeProvider>
     )
 }
 
