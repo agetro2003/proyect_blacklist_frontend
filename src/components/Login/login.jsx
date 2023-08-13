@@ -76,6 +76,7 @@ const [loading, setLoading] = useState(false)
     pswd_usuario: "",
     mail_usuario: "",
     birth_usuario:"",
+    val_pswd:"",
     id_plan: 1
  })
 
@@ -87,28 +88,33 @@ const [loading, setLoading] = useState(false)
         }
         setData(newData)
     }
-    const handleLogin = ()=>{
+    const handleLogin = async ()=>{
         setLoading(true)
         let loginData = {
             mail_usuario: data.mail_usuario,
             pswd_usuario: data.pswd_usuario
-        }
-        console.log(loginData)
-        
-        let pswd_usuario = '123456'
-        if (pswd_usuario == "123456") {
-
+        }        
+            try {
+            const loginFlag = await API_AXIOS.post(endpointList.login, loginData)
             let date = new Date()
             setLogin(date)
             setLoading(false)
-            setAlert(true)
             window.location.assign('main')
-        }
+            } catch (error) {
+                setLoading(false)
+                console.log(error)
+                setAlert({
+                    active: true,
+                    title: "Error",
+                    content:error.response.data.message
+                })
+            }        
     }
 
     const handleRegister = async () => {
         setLoading(true)
-        try {
+        if(data.pswd_usuario == data.val_pswd) {
+         try {
         const registeredFlag = await API_AXIOS.post(endpointList.register, data)
         setAlert({
             active: true,
@@ -124,7 +130,15 @@ const [loading, setLoading] = useState(false)
                 title: "Error",
                 content:error.response.data.message
             })
+        }   
+        } else {
+            setAlert({
+                active: true,
+                title: "Error",
+                content: "Las contraseñas no coinciden"
+            })
         }
+        
         
         setLoading(false)
       
@@ -232,6 +246,10 @@ const [loading, setLoading] = useState(false)
                                                     </div>
                                                     <div className="form-group mt-2">
                                                     <input onChange={handleInputs} name="pswd_usuario" type="password" value={data.pswd_usuario} className="form-style" placeholder="Password" />
+                                                        <i className="input-icon uil uil-lock-alt"></i>
+                                                    </div>
+                                                    <div className="form-group mt-2">
+                                                    <input onChange={handleInputs} name="val_pswd" type="password" value={data.val_pswd} className="form-style" placeholder="Validate password" />
                                                         <i className="input-icon uil uil-lock-alt"></i>
                                                     </div>
                                                     <div className="form-group mt-2">
