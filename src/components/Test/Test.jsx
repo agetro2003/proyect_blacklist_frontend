@@ -16,12 +16,13 @@ const Test = () => {
     const handleClick =  async(e) => {
         setLoading(true)
         try {
-            const validation = await API_AXIOS.post(endpointList.validate_email, {email})
+            const validateEmail = await API_AXIOS.post(endpointList.validate_email, {email})
+            const validateDomain = await API_AXIOS.post(endpointList.validate_domain, {email})
             setLoading(false)
             setAlert({
                 active: true,
                 title: "Resultado",
-                content: validation.data.message
+                content: `${validateEmail.data.message} y ${validateDomain.data.message}`
             })
         } catch (error) {
             setLoading(false)
