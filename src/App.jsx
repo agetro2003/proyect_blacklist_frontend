@@ -25,9 +25,9 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route exact path='/Main' element={<Main />}></Route>
         </Route>
+          <Route exact path='/Dashboard' element={<Dashboard />}></Route>
         <Route exact path='/*' element={<PageNotFound />}></Route>
         <Route exact path='/LogOut' element={<UnAuthorized />}></Route>
-        <Route exact path='/Dashboard' element={<Dashboard />}></Route>
       </Routes>
     </Router>
 

@@ -1,8 +1,27 @@
-# React + Vite
+# Proyect BlackList Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenido a nuestro servicio para validacion de correos.
 
-Currently, two official plugins are available:
+En este repositorio se encuentra el desarrollo de nuestra aplicación web del lado del cliente.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instalación y ejecucion de manera local
+
+### Clona el presente repositorio de github
+```bash
+git clone https://github.com/Maulex23/proyect_blacklist_frontend.git
+```
+
+### Ingresa en el repositorio local
+```bash
+cd proyect_blacklist_frontend
+```
+
+### Instala las dependecias
+```bash
+npm i
+```
+
+### Ejecuta la aplicación
+```bash
+npm run dev
+```
