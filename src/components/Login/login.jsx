@@ -19,6 +19,8 @@ import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 import Overlay from "../Overlay/Overlay";
 import Alert from "../Alert/Alert";
+import API_AXIOS from "../../../settings/AxiosInstance";
+import endpointList from "../../../settings/endpoints";
 
 function Copyright(props) {
     return (
@@ -61,14 +63,20 @@ const footers = [
 const defaultTheme = createTheme();
 
 const Login = () => {
-const [alert, setAlert] = useState(false) 
+const [alert, setAlert] = useState({
+    active:false,
+    title: "",
+    content: ""
+}) 
 const [loading, setLoading] = useState(false)
  const [isLog, setLogin] = useLocalStorage('session', '')
  const [data, setData] = useState({
-    name: "",
-    number: "",
-    pswd: "",
-    mail: ""
+    name_usuario: "",
+    tlfn_usuario: "",
+    pswd_usuario: "",
+    mail_usuario: "",
+    birth_usuario:"",
+    id_plan: 1
  })
 
     const handleInputs = (e) => {
@@ -82,13 +90,13 @@ const [loading, setLoading] = useState(false)
     const handleLogin = ()=>{
         setLoading(true)
         let loginData = {
-            mail: data.mail,
-            pswd: data.pswd
+            mail_usuario: data.mail_usuario,
+            pswd_usuario: data.pswd_usuario
         }
         console.log(loginData)
         
-        let pswd = '123456'
-        if (pswd == "123456") {
+        let pswd_usuario = '123456'
+        if (pswd_usuario == "123456") {
 
             let date = new Date()
             setLogin(date)
@@ -98,19 +106,36 @@ const [loading, setLoading] = useState(false)
         }
     }
 
-    const handleRegister = () => {
+    const handleRegister = async () => {
         setLoading(true)
+        try {
+        const registeredFlag = await API_AXIOS.post(endpointList.register, data)
+        setAlert({
+            active: true,
+            title: "Mensaje",
+            content: registeredFlag.data.message
+        })
+        console.log(registeredFlag)
         console.log(data)
+        } catch (error) {
+            console.log(error)
+            setAlert({
+                active: true,
+                title: "Error",
+                content:error.response.data.message
+            })
+        }
+        
         setLoading(false)
-        setAlert(true)
+      
     }
 
     return (
 
         // Navbar
         <ThemeProvider theme={defaultTheme}>
-            {alert && (
-                <Alert open={alert} setOpen={setAlert} title={"Error"} content={"Ha ocurrido un error"}></Alert>
+            {alert.active && (
+                <Alert open={alert.active} setOpen={setAlert} title={alert.title} content={alert.content}></Alert>
             )}
              {loading && (
              <Overlay>
@@ -175,11 +200,11 @@ const [loading, setLoading] = useState(false)
                                                 <div className="section text-center">
                                                     <h4 className="mb-4 pb-3 login-titulo">Log In</h4>
                                                     <div className="form-group">
-                                                    <input onChange={handleInputs}  name="mail" type="email" value={data.mail} className="form-style" placeholder="Email" />
+                                                    <input onChange={handleInputs}  name="mail_usuario" type="email" value={data.mail_usuario} className="form-style" placeholder="Email" />
                                                         <i className="input-icon uil uil-at"></i>
                                                     </div>
                                                     <div className="form-group mt-2">
-                                                    <input onChange={handleInputs} name="pswd" type="password" value={data.pswd} className="form-style" placeholder="Password" />
+                                                    <input onChange={handleInputs} name="pswd_usuario" type="password" value={data.pswd_usuario} className="form-style" placeholder="Password" />
                                                         <i className="input-icon uil uil-lock-alt"></i>
                                                     </div>
                                                     <div className="login-boton-holder">
@@ -194,19 +219,23 @@ const [loading, setLoading] = useState(false)
                                                 <div className="section text-center">
                                                     <h4 className="mb-3 pb-3 login-titulo">Sign Up</h4>
                                                     <div className="form-group">
-                                                    <input onChange={handleInputs} name="name" type="text" value={data.name} className="form-style" placeholder="Full Name" />
+                                                    <input onChange={handleInputs} name="name_usuario" type="text" value={data.name_usuario} className="form-style" placeholder="Full Name" />
                                                         <i className="input-icon uil uil-user"></i>
                                                     </div>
                                                     <div className="form-group mt-2">
-                                                    <input onChange={handleInputs} name="number" type="tel" value={data.number} className="form-style" placeholder="Phone Number" />
+                                                    <input onChange={handleInputs} name="tlfn_usuario" type="tel" value={data.tlfn_usuario} className="form-style" placeholder="Phone Number" />
                                                         <i className="input-icon uil uil-phone"></i>
                                                     </div>
                                                     <div className="form-group mt-2">
-                                                    <input onChange={handleInputs} name="mail" type="email" value={data.mail} className="form-style" placeholder="Email" />
+                                                    <input onChange={handleInputs} name="mail_usuario" type="email" value={data.mail_usuario} className="form-style" placeholder="Email" />
                                                         <i className="input-icon uil uil-at"></i>
                                                     </div>
                                                     <div className="form-group mt-2">
-                                                    <input onChange={handleInputs} name="pswd" type="password" value={data.pswd} className="form-style" placeholder="Password" />
+                                                    <input onChange={handleInputs} name="pswd_usuario" type="password" value={data.pswd_usuario} className="form-style" placeholder="Password" />
+                                                        <i className="input-icon uil uil-lock-alt"></i>
+                                                    </div>
+                                                    <div className="form-group mt-2">
+                                                    <input onChange={handleInputs} name="birth_usuario" type="date" value={data.birth_usuario} className="form-style" placeholder="Birthdate"/>
                                                         <i className="input-icon uil uil-lock-alt"></i>
                                                     </div>
                                                     <div className="login-boton-holder">

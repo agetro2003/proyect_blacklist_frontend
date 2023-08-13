@@ -3,7 +3,11 @@ import { Dialog, DialogActions, DialogContent, DialogTitle, DialogContentText, B
 const Alert = ({open, setOpen, title, content}) => {
     
     const handleClose = () => {
-        setOpen(false)
+        setOpen({
+            active:false,
+            title: "",
+            content: ""
+        })
     }
 
     return (
