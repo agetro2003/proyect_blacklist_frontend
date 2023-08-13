@@ -1,7 +1,3 @@
-// import React from "react"
-// import { Button } from "@mui/base/Button"
-// import "./PageNotFound.css"
-
 import React, { useEffect } from "react";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -88,9 +84,6 @@ const PageNotFound = () => {
                             Support
                         </Link>
                     </nav>
-                    {/* <Button href="/Login" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
-                        Login
-                    </Button> */}
                 </Toolbar>
             </AppBar>
 
@@ -111,7 +104,9 @@ const PageNotFound = () => {
                             <Typography variant="h6">
                                 The page you’re looking for doesn’t exist.
                             </Typography>
-                            <Button variant="contained" href="/" >Back Home</Button>
+                            <Button variant="contained" href="/" >
+                                Back Home
+                            </Button>
                         </Grid>
                         <Grid xs={6}>
                             <img
