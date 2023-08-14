@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 const ProtectedRoute = () => {
     const navigate = useNavigate();
-    const userlogin = window.localStorage.getItem('session');
+    const userlogin = localStorage.getItem('session');
   
     useEffect(() => {
       if (!userlogin || userlogin === '') {

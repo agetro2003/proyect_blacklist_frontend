@@ -70,6 +70,7 @@ const [alert, setAlert] = useState({
 }) 
 const [loading, setLoading] = useState(false)
  const [isLog, setLogin] = useLocalStorage('session', '')
+ const [userEmail, setUserEmail] = useLocalStorage('userEmail', '')
  const [data, setData] = useState({
     name_usuario: "",
     tlfn_usuario: "",
@@ -98,6 +99,7 @@ const [loading, setLoading] = useState(false)
             const loginFlag = await API_AXIOS.post(endpointList.login, loginData)
             let date = new Date()
             setLogin(date)
+            setUserEmail(data.mail_usuario)
             setLoading(false)
             window.location.assign('main')
             } catch (error) {
