@@ -17,7 +17,7 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 // import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
+import { MainListItems, secondaryListItems } from './listItems';
 import EmailValidationForm from './EmailValidationForm';
 import UserProfileInfo from './UserProfileInfo';
 import SupportForm from './SupportForm';
@@ -38,6 +38,8 @@ function Copyright(props) {
     </Typography>
   );
 }
+
+
 
 const drawerWidth = 240;
 
@@ -89,6 +91,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const defaultTheme = createTheme();
 
 export default function Dashboard() {
+  const [show, setShow] = useState('test')
   const [user, setUser] = useState({
     api_key: "",
     birth_usuario: "",
@@ -175,7 +178,7 @@ export default function Dashboard() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            {mainListItems}
+            <MainListItems setShow={setShow}/>
             {/* <Divider sx={{ my: 1 }} />
             {secondaryListItems} */}
           </List>
@@ -228,21 +231,26 @@ export default function Dashboard() {
                 </Paper>
               </Grid> */}
               {/* Formulario validador de correos */}
-              <Grid id="test" item xs={12}>
+              {show == 'test' && (
+              <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <EmailValidationForm />
                 </Paper>
-              </Grid>
-              <Grid id="user" item xs={12}>
+              </Grid>)}
+              {show == 'user' && (
+                <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <UserProfileInfo user={user} />
                 </Paper>
               </Grid>
-              <Grid id="support" item xs={12}>
+              )}
+              {show =='support' && (
+                <Grid id="support" item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <SupportForm />
                 </Paper>
               </Grid>
+              )}
             </Grid>
             <Copyright sx={{ pt: 4 }} />
           </Container>

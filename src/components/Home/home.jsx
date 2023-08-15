@@ -3,7 +3,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 // import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-// import Card from '@mui/material/Card';
+ import Card from '@mui/material/Card';
 // import CardActions from '@mui/material/CardActions';
 // import CardContent from '@mui/material/CardContent';
 // import CardHeader from '@mui/material/CardHeader';
@@ -15,7 +15,8 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
-
+import { CardActionArea, CardContent, CardMedia } from "@mui/material";
+import styles from "./home.module.css"
 // import MainHome from "../MainHome/mainHome";
 
 function Copyright(props) {
@@ -106,7 +107,42 @@ const Home = () => {
                 </Toolbar>
             </AppBar>
 
-            {/* Contenido Pendiente */}
+            <div className={styles.home}>
+                <img src="../../../public/imagenHome.jpg" alt="imagenFondo" width={800} height={600}/>
+                <React.Fragment>
+                    <CardContent>
+                        <Typography variant="h2" component="div">
+                        Bienveido a BlackList Proyect
+                        Su API para validar correos de confianza
+                        </Typography>
+                        <Typography variant="h5">
+                            Con nuestro servicio podras identificar correos temporales o invalidos.
+                         </Typography>
+                    </CardContent>
+                </React.Fragment>
+            </div>
+
+            {/*
+            <Card sx={{ maxWidth: 1500, padding: 5, marginLeft:50, marginRight: 50}}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="400"
+          image='../../../public/imagenHome.jpg'
+          alt="green iguana"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            BlackList Proyect
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Bienvenido a nuestro servicio de verificacion de correos insanos. 
+            Donde podras usar nuestra API para validar que los correos que reciba tu aplicacion no sean temporales
+            
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>*/}
 
             {/* Footer */}
             <Container

@@ -8,28 +8,34 @@ import PersonIcon from '@mui/icons-material/Person';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
-export const mainListItems = (
-  <React.Fragment>
-    <ListItemButton component="a" href='#test'> 
+export const MainListItems = ({setShow}) => {
+  const handleClick = (target) => {
+    setShow(target)
+  }
+  return (
+    <React.Fragment>
+    <ListItemButton  onClick={()=>{handleClick('test')}} > 
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItemButton>
-    <ListItemButton  component="a" href='#user'>
+    <ListItemButton   onClick={()=>{handleClick('user')}} >
       <ListItemIcon>
         <PersonIcon />
       </ListItemIcon>
       <ListItemText primary="Perfil" />
     </ListItemButton>
-    <ListItemButton  component="a" href='#support'>
+    <ListItemButton  onClick={()=>{handleClick('support')}}>
       <ListItemIcon>
         <SupportAgentIcon />
       </ListItemIcon>
       <ListItemText primary="Soporte" />
     </ListItemButton>
   </React.Fragment>
-);
+  )
+  
+  };
 
 export const secondaryListItems = (
   <React.Fragment>
