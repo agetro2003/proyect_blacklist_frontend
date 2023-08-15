@@ -228,17 +228,17 @@ export default function Dashboard() {
                 </Paper>
               </Grid> */}
               {/* Formulario validador de correos */}
-              <Grid item xs={12}>
+              <Grid id="test" item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <EmailValidationForm />
                 </Paper>
               </Grid>
-              <Grid item xs={12}>
+              <Grid id="user" item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <UserProfileInfo user={user} />
                 </Paper>
               </Grid>
-              <Grid item xs={12}>
+              <Grid id="support" item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <SupportForm />
                 </Paper>

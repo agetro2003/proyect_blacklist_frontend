@@ -10,19 +10,19 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton>
+    <ListItemButton component="a" href='#test'> 
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton  component="a" href='#user'>
       <ListItemIcon>
         <PersonIcon />
       </ListItemIcon>
       <ListItemText primary="Perfil" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton  component="a" href='#support'>
       <ListItemIcon>
         <SupportAgentIcon />
       </ListItemIcon>
