@@ -23,9 +23,9 @@ function App() {
         <Route exact path="/Login" element={<Login />} />
         <Route exact path="/Pricing" element={<Pricing />} />
         <Route element={<ProtectedRoute />}>
-          <Route exact path='/Main' element={<Main />}></Route>
+          <Route exact path='/main' element={<Dashboard />}></Route>
+
         </Route>
-          <Route exact path='/Dashboard' element={<Dashboard />}></Route>
         <Route exact path='/*' element={<PageNotFound />}></Route>
         <Route exact path='/LogOut' element={<UnAuthorized />}></Route>
       </Routes>

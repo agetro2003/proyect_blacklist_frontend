@@ -18,7 +18,7 @@ export const MainListItems = ({setShow}) => {
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
+      <ListItemText primary="Probar API" />
     </ListItemButton>
     <ListItemButton   onClick={()=>{handleClick('user')}} >
       <ListItemIcon>
