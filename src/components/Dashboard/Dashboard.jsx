@@ -18,16 +18,20 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 // import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
-import Chart from './Chart';
-import Deposits from './Deposits';
-import Orders from './Orders';
+import EmailValidationForm from './EmailValidationForm';
+import UserProfileInfo from './UserProfileInfo';
+import SupportForm from './SupportForm';
+import API_AXIOS from '../../../settings/AxiosInstance';
+import endpointList from '../../../settings/endpoints';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        BlackList Service
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -85,7 +89,35 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const defaultTheme = createTheme();
 
 export default function Dashboard() {
-  const [open, setOpen] = React.useState(true);
+  const [user, setUser] = useState({
+    api_key: "",
+    birth_usuario: "",
+    info_plan: {
+      cost_plan: 0,
+      desc_plan: "free",
+      id_plan: 1,
+      limit_plan: 20
+    },
+    name_user: "",
+    tlfn_usuario: "",
+    requests: 0
+    })
+
+    useEffect(()=>{
+      (async()=>{
+       try {
+      const userEmail = localStorage.getItem('userEmail')
+      const user = await API_AXIOS.post(endpointList.user_info, {mail_usuario: userEmail.slice(1, userEmail.length -1)})
+      setUser(user.data.data)
+  } catch (error) {
+          console.log(error)
+      }   
+      })()
+      
+  }, [])
+
+
+  const [open, setOpen] = useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -144,8 +176,8 @@ export default function Dashboard() {
           <Divider />
           <List component="nav">
             {mainListItems}
-            <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+            {/* <Divider sx={{ my: 1 }} />
+            {secondaryListItems} */}
           </List>
         </Drawer>
         <Box
@@ -164,7 +196,7 @@ export default function Dashboard() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
+              {/* <Grid item xs={12} md={8} lg={9}>
                 <Paper
                   sx={{
                     p: 2,
@@ -175,9 +207,9 @@ export default function Dashboard() {
                 >
                   <Chart />
                 </Paper>
-              </Grid>
+              </Grid> */}
               {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
+              {/* <Grid item xs={12} md={4} lg={3}>
                 <Paper
                   sx={{
                     p: 2,
@@ -188,11 +220,27 @@ export default function Dashboard() {
                 >
                   <Deposits />
                 </Paper>
-              </Grid>
+              </Grid> */}
               {/* Recent Orders */}
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <Orders />
+                </Paper>
+              </Grid> */}
+              {/* Formulario validador de correos */}
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <EmailValidationForm />
+                </Paper>
+              </Grid>
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <UserProfileInfo user={user} />
+                </Paper>
+              </Grid>
+              <Grid item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <SupportForm />
                 </Paper>
               </Grid>
             </Grid>

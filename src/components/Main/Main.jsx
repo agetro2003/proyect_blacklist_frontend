@@ -15,7 +15,8 @@ const Main = () => {
       limit_plan: 20
     },
     name_user: "",
-    tlfn_usuario: ""
+    tlfn_usuario: "",
+    requests: 0
     })
 
     useEffect(()=>{
@@ -23,6 +24,8 @@ const Main = () => {
          try {
         const userEmail = localStorage.getItem('userEmail')
         const user = await API_AXIOS.post(endpointList.user_info, {mail_usuario: userEmail.slice(1, userEmail.length -1)})
+        console.log(user.data.data)
+
         setUser(user.data.data)
     } catch (error) {
             console.log(error)
