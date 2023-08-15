@@ -5,10 +5,8 @@
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home/home";
-import Login from "./components/Login/Login";
+import Login from "./components/Login/login";
 import Pricing from './components/Pricing/pricing';
-import Main from './components/Main/Main';
-import Test from './components/Test/Test';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import UnAuthorized from './components/UnAuthorized/UnAuthorized';
 import ProtectedRoute from './components/ProtectedRoute';
