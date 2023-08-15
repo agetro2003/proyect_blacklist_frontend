@@ -1,14 +1,51 @@
 import { useEffect, useState } from 'react'
 //import * as XLSX from 'xlsx'
+import Alert from "../Alert/Alert";
+import API_AXIOS from '../../../settings/AxiosInstance';
+import endpointList from '../../../settings/endpoints';
+import Overlay from '../Overlay/Overlay';
 
 const Test = () => {
-    const [mail, setMail] = useState('')
-    
+    const [loading, setLoading] = useState(false)
+    const [alert, setAlert] = useState({
+    active:false,
+    title: "",
+    content: ""
+}) 
+    const [email, setMail] = useState('')
+    const handleClick =  async(e) => {
+        setLoading(true)
+        try {
+            const validateEmail = await API_AXIOS.post(endpointList.validate_email, {email})
+            const validateDomain = await API_AXIOS.post(endpointList.validate_domain, {email})
+            setLoading(false)
+            setAlert({
+                active: true,
+                title: "Resultado",
+                content: `${validateEmail.data.message} y ${validateDomain.data.message}`
+            })
+        } catch (error) {
+            setLoading(false)
+            setAlert({
+                active: true,
+                title: "Resultado",
+                content:error.response.data.message
+            })
+        }
+    }
     return (
         <div>
+            {alert.active && (
+                <Alert open={alert.active} setOpen={setAlert} title={alert.title} content={alert.content}></Alert>
+            )}
+            {loading && (
+             <Overlay>
+             </Overlay>
+             )}
             <h1> Introduzca el correo que desee validar </h1>
             <input type='email' onChange={(e)=>{setMail(e.target.value)}}/>
-            <h2>Resultado de {mail} </h2>
+            <button onClick={handleClick}> Evaluar email </button>
+            
         </div>
     )
     /*

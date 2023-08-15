@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 const ProtectedRoute = () => {
     const navigate = useNavigate();
-    const userlogin = window.localStorage.getItem('session');
+    const userlogin = localStorage.getItem('session');
   
     useEffect(() => {
       if (!userlogin || userlogin === '') {
@@ -12,7 +12,7 @@ const ProtectedRoute = () => {
         const loginTime = new Date(userlogin.slice(1, userlogin.length - 1));
         const now = new Date();
         const date = new Date(loginTime);
-        date.setMinutes(loginTime.getMinutes() + 1);
+        date.setMinutes(loginTime.getMinutes() + 15);
   console.log(date + " " + now)
         if (date < now) {
           navigate('/LogOut');

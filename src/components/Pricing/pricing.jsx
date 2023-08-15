@@ -1,127 +1,393 @@
-import React from "react";
-import "./pricing.css"
+// import React from "react";
+// import "./pricing.css"
 
 
 
-const Pricing = () => {
-    const handleLoginClick = () => {
-        window.location.href = "/Login";
-    };
+// const Pricing = () => {
+//     const handleLoginClick = () => {
+//         window.location.href = "/Login";
+//     };
 
+//     return (
+//         <div className="wrapper">
+//             {/* <!-- PRICING-TABLE CONTAINER --> */}
+//             <div className="pricing-table group">
+//                 <h1 className="heading">
+//                     Pricing overview
+//                 </h1>
+//                 {/* <!-- PERSONAL --> */}
+//                 <div className="block personal fl">
+//                     <h2 className="title">Basic</h2>
+//                     {/* <!-- CONTENT --> */}
+//                     <div className="content">
+//                         <p className="price">
+//                             <sup>$</sup>
+//                             <span>00</span>
+//                             <sub>/mo.</sub>
+//                         </p>
+//                         <p className="hint">Perfect for freelancers</p>
+//                     </div>
+//                     {/* <!-- /CONTENT --> */}
+//                     {/* <!-- FEATURES --> */}
+//                     <ul className="features">
+//                         <li><span className="fontawesome-cog"></span>Access to Services</li>
+//                         <li><span className="fontawesome-star"></span>10 Request /mo</li>
+//                         <li><span className="fontawesome-dashboard"></span> # </li>
+//                         <li><span className="fontawesome-cloud"></span> # </li>
+//                     </ul>
+//                     {/* <!-- /FEATURES --> */}
+//                     {/* <!-- PT-FOOTER --> */}
+//                     <div className="pt-footer">
+//                         <button className="cta" onClick={handleLoginClick}>
+//                             <span className="hover-underline-animation"> Sing In </span>
+//                             <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+//                                 <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+//                             </svg>
+//                         </button>
+//                     </div>
+//                     {/* <!-- /PT-FOOTER --> */}
+//                 </div>
+//                 {/* <!-- /PERSONAL --> */}
+//                 {/* <!-- PROFESSIONAL --> */}
+//                 <div className="block professional fl">
+//                     <h2 className="title">Standart</h2>
+//                     {/* <!-- CONTENT --> */}
+//                     <div className="content">
+//                         <p className="price">
+//                             <sup>$</sup>
+//                             <span>9.99</span>
+//                             <sub>/mo.</sub>
+//                         </p>
+//                         <p className="hint">Suitable for startups</p>
+//                     </div>
+//                     {/* <!-- /CONTENT --> */}
+//                     {/* <!-- FEATURES --> */}
+//                     <ul className="features">
+//                         <li><span className="fontawesome-cog"></span>Access to Services</li>
+//                         <li><span className="fontawesome-star"></span>50 Request /mo.</li>
+//                         <li><span className="fontawesome-dashboard"></span>#</li>
+//                         <li><span className="fontawesome-cloud"></span>#</li>
+//                     </ul>
+//                     {/* <!-- /FEATURES --> */}
+//                     {/* <!-- PT-FOOTER --> */}
+//                     <div className="pt-footer">
+//                         <button className="cta" onClick={handleLoginClick}>
+//                             <span className="hover-underline-animation"> Buy </span>
+//                             <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+//                                 <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+//                             </svg>
+//                         </button>
+//                     </div>
+//                     {/* <!-- /PT-FOOTER --> */}
+//                 </div>
+//                 {/* <!-- /PROFESSIONAL --> */}
+//                 {/* <!-- BUSINESS --> */}
+//                 <div className="block business fl">
+//                     <h2 className="title">Premium</h2>
+//                     {/* <!-- CONTENT --> */}
+//                     <div className="content">
+//                         <p className="price">
+//                             <sup>$</sup>
+//                             <span>19.99</span>
+//                             <sub>/mo.</sub>
+//                         </p>
+//                         <p className="hint">For established business</p>
+//                     </div>
+//                     {/* <!-- /CONTENT --> */}
+
+//                     {/* <!-- FEATURES --> */}
+//                     <ul className="features">
+//                         <li><span className="fontawesome-cog"></span>Access to Services</li>
+//                         <li><span className="fontawesome-star"></span>100 Request /mo.</li>
+//                         <li><span className="fontawesome-dashboard"></span> # </li>
+//                         <li><span className="fontawesome-cloud"></span> # </li>
+//                     </ul>
+//                     {/* <!-- /FEATURES --> */}
+
+//                     {/* <!-- PT-FOOTER --> */}
+//                     <div className="pt-footer">
+//                         <button className="cta" onClick={handleLoginClick}>
+//                             <span className="hover-underline-animation"> Buy </span>
+//                             <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+//                                 <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+//                             </svg>
+//                         </button>
+//                     </div>
+//                     {/* <!-- /PT-FOOTER --> */}
+//                 </div>
+//                 {/* <!-- /BUSINESS --> */}
+//             </div>
+//             {/* <!-- /PRICING-TABLE --> */}
+//         </div>
+//     );
+// };
+
+
+
+// export default Pricing
+
+import * as React from 'react';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import CssBaseline from '@mui/material/CssBaseline';
+import Grid from '@mui/material/Grid';
+import StarIcon from '@mui/icons-material/StarBorder';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
+import GlobalStyles from '@mui/material/GlobalStyles';
+import Container from '@mui/material/Container';
+
+function Copyright(props) {
     return (
-        <div className="wrapper">
-            {/* <!-- PRICING-TABLE CONTAINER --> */}
-            <div className="pricing-table group">
-                <h1 className="heading">
-                    Pricing overview
-                </h1>
-                {/* <!-- PERSONAL --> */}
-                <div className="block personal fl">
-                    <h2 className="title">Basic</h2>
-                    {/* <!-- CONTENT --> */}
-                    <div className="content">
-                        <p className="price">
-                            <sup>$</sup>
-                            <span>00</span>
-                            <sub>/mo.</sub>
-                        </p>
-                        <p className="hint">Perfect for freelancers</p>
-                    </div>
-                    {/* <!-- /CONTENT --> */}
-                    {/* <!-- FEATURES --> */}
-                    <ul className="features">
-                        <li><span className="fontawesome-cog"></span>Access to Services</li>
-                        <li><span className="fontawesome-star"></span>10 Request</li>
-                        <li><span className="fontawesome-dashboard"></span> # </li>
-                        <li><span className="fontawesome-cloud"></span> # </li>
-                    </ul>
-                    {/* <!-- /FEATURES --> */}
-                    {/* <!-- PT-FOOTER --> */}
-                    <div className="pt-footer">
-                        <button className="cta" onClick={handleLoginClick}>
-                            <span className="hover-underline-animation"> Sing In </span>
-                            <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
-                                <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    {/* <!-- /PT-FOOTER --> */}
-                </div>
-                {/* <!-- /PERSONAL --> */}
-                {/* <!-- PROFESSIONAL --> */}
-                <div className="block professional fl">
-                    <h2 className="title">Standart</h2>
-                    {/* <!-- CONTENT --> */}
-                    <div className="content">
-                        <p className="price">
-                            <sup>$</sup>
-                            <span>9.99</span>
-                            <sub>/mo.</sub>
-                        </p>
-                        <p className="hint">Suitable for startups</p>
-                    </div>
-                    {/* <!-- /CONTENT --> */}
-                    {/* <!-- FEATURES --> */}
-                    <ul className="features">
-                        <li><span className="fontawesome-cog"></span>10 WordPress Install</li>
-                        <li><span className="fontawesome-star"></span>100,000 visits/mo.</li>
-                        <li><span className="fontawesome-dashboard"></span>Unlimited Data Transfer</li>
-                        <li><span className="fontawesome-cloud"></span>20GB Local Storage</li>
-                    </ul>
-                    {/* <!-- /FEATURES --> */}
-                    {/* <!-- PT-FOOTER --> */}
-                    <div className="pt-footer">
-                        <button className="cta" onClick={handleLoginClick}>
-                            <span className="hover-underline-animation"> Buy </span>
-                            <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
-                                <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    {/* <!-- /PT-FOOTER --> */}
-                </div>
-                {/* <!-- /PROFESSIONAL --> */}
-                {/* <!-- BUSINESS --> */}
-                <div className="block business fl">
-                    <h2 className="title">Premium</h2>
-                    {/* <!-- CONTENT --> */}
-                    <div className="content">
-                        <p className="price">
-                            <sup>$</sup>
-                            <span>19.99</span>
-                            <sub>/mo.</sub>
-                        </p>
-                        <p className="hint">For established business</p>
-                    </div>
-                    {/* <!-- /CONTENT --> */}
-
-                    {/* <!-- FEATURES --> */}
-                    <ul className="features">
-                        <li><span className="fontawesome-cog"></span>25 WordPress Install</li>
-                        <li><span className="fontawesome-star"></span>400,000 visits/mo.</li>
-                        <li><span className="fontawesome-dashboard"></span>Unlimited Data Transfer</li>
-                        <li><span className="fontawesome-cloud"></span>30GB Local Storage</li>
-                    </ul>
-                    {/* <!-- /FEATURES --> */}
-
-                    {/* <!-- PT-FOOTER --> */}
-                    <div className="pt-footer">
-                        <button className="cta" onClick={handleLoginClick}>
-                            <span className="hover-underline-animation"> Buy </span>
-                            <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
-                                <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    {/* <!-- /PT-FOOTER --> */}
-                </div>
-                {/* <!-- /BUSINESS --> */}
-            </div>
-            {/* <!-- /PRICING-TABLE --> */}
-        </div>
+        <Typography variant="body2" color="text.secondary" align="center" {...props}>
+            {'Copyright © '}
+            <Link color="inherit" href="/">
+                Insane Domains
+            </Link>{' '}
+            {new Date().getFullYear()}
+            {'.'}
+        </Typography>
     );
-};
+}
+
+const tiers = [
+    {
+        title: 'Free',
+        subheader: 'For Beginners',
+        price: '0',
+        description: [
+            '10 users included',
+            '2 GB of storage',
+            'Help center access',
+            'Email support',
+        ],
+        buttonText: 'Sign up for free',
+        buttonVariant: 'outlined',
+    },
+    {
+        title: 'Pro',
+        subheader: 'Most popular',
+        price: '15',
+        description: [
+            '20 users included',
+            '10 GB of storage',
+            'Help center access',
+            'Priority email support',
+        ],
+        buttonText: 'Get started',
+        buttonVariant: 'contained',
+    },
+    {
+        title: 'Enterprise',
+        subheader: 'Premium Services',
+        price: '30',
+        description: [
+            '50 users included',
+            '30 GB of storage',
+            'Help center access',
+            'Phone & email support',
+        ],
+        buttonText: 'Contact us',
+        buttonVariant: 'outlined',
+    },
+];
+
+const footers = [
+    {
+        title: 'Company',
+        description: ['Team', 'History', 'Contact us', 'Locations'],
+    },
+    {
+        title: 'Features',
+        description: [
+            'Cool stuff',
+            'Random feature',
+            'Team feature',
+            'Developer stuff',
+            'Another one',
+        ],
+    },
+    {
+        title: 'Resources',
+        description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
+    },
+    {
+        title: 'Legal',
+        description: ['Privacy policy', 'Terms of use'],
+    },
+];
 
 
+const defaultTheme = createTheme();
 
-export default Pricing
+export default function Pricing() {
+    return (
+        // Navbar
+        <ThemeProvider theme={defaultTheme}>
+            <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
+            <CssBaseline />
+            <AppBar
+                position="static"
+                color="default"
+                elevation={0}
+                sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
+            >
+                <Toolbar sx={{ flexWrap: 'wrap' }}>
+                    <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+                        Dominio de Correos Insanos
+                    </Typography>
+                    <nav>
+                        <Link
+                            variant="button"
+                            color="text.primary"
+                            href="/"
+                            sx={{ my: 1, mx: 1.5 }}
+                        >
+                            Home
+                        </Link>
+                        <Link
+                            variant="button"
+                            color="text.primary"
+                            href="/Pricing"
+                            sx={{ my: 1, mx: 1.5 }}
+                        >
+                            Pricing
+                        </Link>
+                        <Link
+                            variant="button"
+                            color="text.primary"
+                            href="#"
+                            sx={{ my: 1, mx: 1.5 }}
+                        >
+                            Support
+                        </Link>
+                    </nav>
+                    <Button href="/Login" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
+                        Login
+                    </Button>
+                </Toolbar>
+            </AppBar>
+            {/* End Navbar */}
+            {/* Hero unit */}
+            <Container disableGutters maxWidth="sm" component="main" sx={{ pt: 8, pb: 6 }}>
+                <Typography
+                    component="h1"
+                    variant="h2"
+                    align="center"
+                    color="text.primary"
+                    gutterBottom
+                >
+                    Pricing
+                </Typography>
+                <Typography variant="h5" align="center" color="text.secondary" component="p">
+                    Contamos con una variedad de planes que se ajustan a sus neceidades
+                </Typography>
+            </Container>
+            {/* End hero unit */}
+            <Container maxWidth="md" component="main">
+                <Grid container spacing={5} alignItems="flex-end">
+                    {tiers.map((tier) => (
+                        // Enterprise card is full width at sm breakpoint
+                        <Grid
+                            item
+                            key={tier.title}
+                            xs={12}
+                            sm={tier.title === 'Enterprise' ? 12 : 6}
+                            md={4}
+                        >
+                            <Card>
+                                <CardHeader
+                                    title={tier.title}
+                                    subheader={tier.subheader}
+                                    titleTypographyProps={{ align: 'center' }}
+                                    action={tier.title === 'Pro' ? <StarIcon /> : null}
+                                    subheaderTypographyProps={{
+                                        align: 'center',
+                                    }}
+                                    sx={{
+                                        backgroundColor: (theme) =>
+                                            theme.palette.mode === 'light' 
+                                                ? theme.palette.grey[200]
+                                                : theme.palette.grey[700],
+                                    }}
+                                />
+                                <CardContent>
+                                    <Box
+                                        sx={{
+                                            display: 'flex',
+                                            justifyContent: 'center',
+                                            alignItems: 'baseline',
+                                            mb: 2,
+                                        }}
+                                    >
+                                        <Typography component="h2" variant="h3" color="text.primary">
+                                            ${tier.price}
+                                        </Typography>
+                                        <Typography variant="h6" color="text.secondary">
+                                            /mo
+                                        </Typography>
+                                    </Box>
+                                    <ul>
+                                        {tier.description.map((line) => (
+                                            <Typography
+                                                component="li"
+                                                variant="subtitle1"
+                                                align="center"
+                                                key={line}
+                                            >
+                                                {line}
+                                            </Typography>
+                                        ))}
+                                    </ul>
+                                </CardContent>
+                                <CardActions>
+                                    <Button fullWidth variant={tier.buttonVariant}>
+                                        {tier.buttonText}
+                                    </Button>
+                                </CardActions>
+                            </Card>
+                        </Grid>
+                    ))}
+                </Grid>
+            </Container>
+            {/* Footer */}
+            <Container
+                maxWidth="md"
+                component="footer"
+                sx={{
+                    borderTop: (theme) => `1px solid ${theme.palette.divider}`,
+                    mt: 8,
+                    py: [3, 6],
+                }}
+            >
+                <Grid container spacing={4} justifyContent="space-evenly">
+                    {footers.map((footer) => (
+                        <Grid item xs={6} sm={3} key={footer.title}>
+                            <Typography variant="h6" color="text.primary" gutterBottom>
+                                {footer.title}
+                            </Typography>
+                            <ul>
+                                {footer.description.map((item) => (
+                                    <li key={item}>
+                                        <Link href="#" variant="subtitle1" color="text.secondary">
+                                            {item}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </Grid>
+                    ))}
+                </Grid>
+                <Copyright sx={{ mt: 5 }} />
+            </Container>
+            {/* End footer */}
+        </ThemeProvider>
+    );
+}
