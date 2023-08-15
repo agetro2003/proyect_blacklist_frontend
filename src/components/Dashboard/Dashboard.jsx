@@ -21,6 +21,10 @@ import { mainListItems, secondaryListItems } from './listItems';
 import EmailValidationForm from './EmailValidationForm';
 import UserProfileInfo from './UserProfileInfo';
 import SupportForm from './SupportForm';
+import API_AXIOS from '../../../settings/AxiosInstance';
+import endpointList from '../../../settings/endpoints';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function Copyright(props) {
   return (
@@ -85,7 +89,35 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const defaultTheme = createTheme();
 
 export default function Dashboard() {
-  const [open, setOpen] = React.useState(true);
+  const [user, setUser] = useState({
+    api_key: "",
+    birth_usuario: "",
+    info_plan: {
+      cost_plan: 0,
+      desc_plan: "free",
+      id_plan: 1,
+      limit_plan: 20
+    },
+    name_user: "",
+    tlfn_usuario: "",
+    requests: 0
+    })
+
+    useEffect(()=>{
+      (async()=>{
+       try {
+      const userEmail = localStorage.getItem('userEmail')
+      const user = await API_AXIOS.post(endpointList.user_info, {mail_usuario: userEmail.slice(1, userEmail.length -1)})
+      setUser(user.data.data)
+  } catch (error) {
+          console.log(error)
+      }   
+      })()
+      
+  }, [])
+
+
+  const [open, setOpen] = useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -203,7 +235,7 @@ export default function Dashboard() {
               </Grid>
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <UserProfileInfo />
+                  <UserProfileInfo user={user} />
                 </Paper>
               </Grid>
               <Grid item xs={12}>

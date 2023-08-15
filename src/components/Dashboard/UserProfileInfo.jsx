@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { TextField, Button, Grid } from '@mui/material';
 import Title from './Title';
 
-export default function UserProfileInfo() {
+export default function UserProfileInfo( {user} ) {
   const [nombre, setNombre] = useState('');
   const [correo, setCorreo] = useState('');
   const [fecha, setFecha] = useState('');
@@ -23,40 +23,46 @@ export default function UserProfileInfo() {
     <Grid container spacing={2}>
       <Grid item xs={12} sm={6}>
         <TextField
-          required
+          InputProps={{ readOnly: true }}
+
+          
           fullWidth
           label="Nombre"
-          value={nombre}
+          value={user.name_user}
           onChange={(event) => setNombre(event.target.value)}
         />
       </Grid>
       <Grid item xs={12} sm={6}>
         <TextField
-          required
+          InputProps={{ readOnly: true }}
+
+          
           fullWidth
           label="Correo electrónico"
           type="email"
-          value={correo}
+          value={localStorage.getItem('userEmail')}
           onChange={(event) => setCorreo(event.target.value)}
         />
       </Grid>
-      <Grid item xs={12} sm={6}>
+      {/*<Grid item xs={12} sm={6}>
         <TextField id="outlined-search"
+        disabled
           required
           fullWidth
           label="Fecha"
           type="date"
           value={fecha}
           onChange={(event) => setFecha(event.target.value)}
-          defaultValue=""
         />
-      </Grid>
+  </Grid>*/}
       <Grid item xs={12} sm={6}>
         <TextField 
+        InputProps={{ readOnly: true }}
+
           required
           fullWidth
           label="Teléfono"
-          value={telefono}
+          value={user.tlfn_usuario}
           onChange={(event) => setTelefono(event.target.value)}
         />
       </Grid>
@@ -82,19 +88,28 @@ export default function UserProfileInfo() {
       </Grid>
       <Grid item xs={12} sm={6}>
         <TextField
-          required
+         InputProps={{ readOnly: true }}
+          
           fullWidth
           label="API Key"
-          value={apiKey}
+          value={user.api_key}
           onChange={(event) => setApiKey(event.target.value)}
         />
       </Grid>
       <Grid item xs={12} sm={6}>
         <TextField
-          required
+          
           fullWidth
           label="Plan"
-          value={plan}
+          value={user.info_plan.desc_plan}
+          InputProps={{ readOnly: true }}
+        />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <TextField       
+          fullWidth
+          label="Consultas realizadas"
+          value={user.requests}
           InputProps={{ readOnly: true }}
         />
       </Grid>
