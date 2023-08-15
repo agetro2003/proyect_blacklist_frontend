@@ -108,7 +108,7 @@ const Home = () => {
             </AppBar>
 
             <div className={styles.home}>
-                <img src="public\imagenHome.jpg" alt="imagenFondo" width={800} height={600}/>
+                <img src="\imagenHome.jpg" alt="imagenFondo" width={800} height={600}/>
                 <React.Fragment>
                     <CardContent>
                         <Typography variant="h2" component="div">
