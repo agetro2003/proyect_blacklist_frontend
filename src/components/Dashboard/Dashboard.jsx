@@ -25,6 +25,7 @@ import API_AXIOS from '../../../settings/AxiosInstance';
 import endpointList from '../../../settings/endpoints';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import ChangePlan from './ChangePlan';
 
 function Copyright(props) {
   return (
@@ -251,6 +252,12 @@ export default function Dashboard() {
                 </Paper>
               </Grid>
               )}
+
+              <Grid id="support" item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <ChangePlan />
+                </Paper>
+              </Grid>
             </Grid>
             <Copyright sx={{ pt: 4 }} />
           </Container>
