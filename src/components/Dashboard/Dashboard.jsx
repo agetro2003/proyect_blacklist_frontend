@@ -253,11 +253,13 @@ export default function Dashboard() {
               </Grid>
               )}
 
-              <Grid id="support" item xs={12}>
+              {show == 'change' && (
+                <Grid id="change" item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <ChangePlan />
                 </Paper>
               </Grid>
+              )}
             </Grid>
             <Copyright sx={{ pt: 4 }} />
           </Container>

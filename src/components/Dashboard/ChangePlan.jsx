@@ -17,11 +17,11 @@ const ChangePlan = () => {
         },
         {
             description: "Medium",
-            cost: 0.5
+            cost: 0.000001
         },
         {
             description: "Premium",
-            cost: 1
+            cost: 0.000002
         }
     ])
     const [selectedPlan, setSelectedPlan] = useState(plans[0])
@@ -77,7 +77,7 @@ const sendTransaction = async() =>{
         const transactionParameters = {
             from: cuentas[0], // 
             to: '0x7cd5feF4E4A548A537073047EBBa51B88e0D9194', //  reemplazar esto con la dirección destino
-            gasPrice: web3.utils.toHex(web3.utils.toWei('20', 'gwei')), 
+            gasPrice: web3.utils.toHex(web3.utils.toWei('0.000001', 'gwei')), 
             gasLimit: web3.utils.toHex(21000), 
             value: web3.utils.toHex(web3.utils.toWei(selectedPlan.cost.toString(), 'ether')),
             chainId: 80001
@@ -88,14 +88,24 @@ const sendTransaction = async() =>{
         .on('transactionHash', function(hash) {
             setLoading(false)
             console.log(`Hash de la transacción: ${hash}`)
+            setAlert({
+                active:true,
+                title: "Mensaje",
+                content: `Transaccion realizada correctamente.
+                Hash de la transacción: ${hash}`
+            })
         })
         .on('error', function(error) {
             setLoading(false)
+            setAlert({
+            active:true,
+            title: "error",
+            content: error.data.message
+        })
             console.log("Error al enviar la transacción:", error);
         });  
         } catch (error) {
             setLoading(false)
-           console.log(error.data.message) 
            setAlert({
             active:true,
             title: "error",

@@ -32,6 +32,12 @@ export const MainListItems = ({setShow}) => {
       </ListItemIcon>
       <ListItemText primary="Soporte" />
     </ListItemButton>
+    <ListItemButton  onClick={()=>{handleClick('change')}}>
+      <ListItemIcon>
+        <SupportAgentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Cambiar plan" />
+    </ListItemButton>
   </React.Fragment>
   )
   
