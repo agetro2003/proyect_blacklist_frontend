@@ -18,7 +18,7 @@ export const MainListItems = ({setShow}) => {
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
+      <ListItemText primary="Probar API" />
     </ListItemButton>
     <ListItemButton   onClick={()=>{handleClick('user')}} >
       <ListItemIcon>
@@ -31,6 +31,12 @@ export const MainListItems = ({setShow}) => {
         <SupportAgentIcon />
       </ListItemIcon>
       <ListItemText primary="Soporte" />
+    </ListItemButton>
+    <ListItemButton  onClick={()=>{handleClick('change')}}>
+      <ListItemIcon>
+        <SupportAgentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Cambiar plan" />
     </ListItemButton>
   </React.Fragment>
   )

@@ -66,7 +66,7 @@ export default function UserProfileInfo( {user} ) {
           onChange={(event) => setTelefono(event.target.value)}
         />
       </Grid>
-      <Grid item xs={12} sm={6}>
+     {/* <Grid item xs={12} sm={6}>
         <TextField
           required
           fullWidth
@@ -75,8 +75,8 @@ export default function UserProfileInfo( {user} ) {
           value={contrasena}
           onChange={(event) => setContrasena(event.target.value)}
         />
-      </Grid>
-      <Grid item xs={12} sm={6}>
+</Grid>*/}
+      {/*<Grid item xs={12} sm={6}>
         <TextField
           required
           fullWidth
@@ -85,7 +85,7 @@ export default function UserProfileInfo( {user} ) {
           value={repetirContrasena}
           onChange={(event) => setRepetirContrasena(event.target.value)}
         />
-      </Grid>
+</Grid>*/}
       <Grid item xs={12} sm={6}>
         <TextField
          InputProps={{ readOnly: true }}
@@ -110,6 +110,22 @@ export default function UserProfileInfo( {user} ) {
           fullWidth
           label="Consultas realizadas"
           value={user.requests}
+          InputProps={{ readOnly: true }}
+        />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <TextField       
+          fullWidth
+          label="Limite de consultas"
+          value={user.info_plan.limit_plan}
+          InputProps={{ readOnly: true }}
+        />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <TextField       
+          fullWidth
+          label="Costo del plan"
+          value={user.info_plan.cost_plan + "$"}
           InputProps={{ readOnly: true }}
         />
       </Grid>
