@@ -47,18 +47,31 @@ const connectWallet = async()=>{
         try {
             const cuentas = await window.ethereum.request({ method: 'eth_requestAccounts' });
             const cuenta = cuentas[0];
+            setAlert({
+                active:true,
+                title: "Mensaje",
+                content: `Cuenta conectada: ${cuenta}`
+            })
             console.log(`Cuenta conectada: ${cuenta}`)
         } catch (error) {
             console.error("Usuario rechazó la conexión:", error);
         }
+    }else {
+        setAlert({
+            active:true,
+            title: "Error",
+            content: "Metamask no se encuentra instalado"
+        })
     }
 }
 
 const sendTransaction = async() =>{
     if (web3) {
+        setLoading(true)
         const cuentas = await web3.eth.getAccounts();
         if (!cuentas || cuentas.length === 0) {
             console.log("No hay cuentas disponibles")
+            setLoading(false)
             return
         }
         const transactionParameters = {
@@ -69,20 +82,35 @@ const sendTransaction = async() =>{
             value: web3.utils.toHex(web3.utils.toWei(selectedPlan.cost.toString(), 'ether')),
             chainId: 80001
         };
+        console.log(transactionParameters)
         try {
           await web3.eth.sendTransaction(transactionParameters)
         .on('transactionHash', function(hash) {
+            setLoading(false)
             console.log(`Hash de la transacción: ${hash}`)
         })
         .on('error', function(error) {
-            console.log('pepe')
-            console.error("Error al enviar la transacción:", error);
+            setLoading(false)
+            console.log("Error al enviar la transacción:", error);
         });  
         } catch (error) {
-           console.log("juan") 
+            setLoading(false)
+           console.log(error.data.message) 
+           setAlert({
+            active:true,
+            title: "error",
+            content: error.data.message
+        })
         }
         
+    }else{
+     setAlert({
+        active:true,
+        title: "Error",
+        content: "Metamask no se encuentra instalado"
+    })   
     }
+    
 } 
 
 const handleChange = (e)=> {
