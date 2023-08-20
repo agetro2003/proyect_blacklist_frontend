@@ -4,6 +4,7 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import Title from './Title';
 
 export default function SupportForm() {
   const [motivo, setMotivo] = useState('');
@@ -17,6 +18,7 @@ export default function SupportForm() {
 
   return (
     <form onSubmit={agendarReunion}>
+      <Title>Soporte</Title>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <TextField

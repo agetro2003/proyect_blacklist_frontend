@@ -26,6 +26,7 @@ import endpointList from '../../../settings/endpoints';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import ChangePlan from './ChangePlan';
+import Documentation from './Documentation/Documentation';
 
 function Copyright(props) {
   return (
@@ -257,6 +258,14 @@ export default function Dashboard() {
                 <Grid id="change" item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <ChangePlan />
+                </Paper>
+              </Grid>
+              )}
+
+                { show == 'documentation' && (
+                <Grid id="change" item xs={12}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <Documentation />
                 </Paper>
               </Grid>
               )}

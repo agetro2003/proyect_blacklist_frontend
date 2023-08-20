@@ -20,6 +20,7 @@ export default function UserProfileInfo( {user} ) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <Title>Perfil</Title>
     <Grid container spacing={2}>
       <Grid item xs={12} sm={6}>
         <TextField
