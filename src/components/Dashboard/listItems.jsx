@@ -7,7 +7,8 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import PersonIcon from '@mui/icons-material/Person';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-
+import ArticleIcon from '@mui/icons-material/Article';
+import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
 export const MainListItems = ({setShow}) => {
   const handleClick = (target) => {
     setShow(target)
@@ -18,7 +19,7 @@ export const MainListItems = ({setShow}) => {
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
+      <ListItemText primary="Probar API" />
     </ListItemButton>
     <ListItemButton   onClick={()=>{handleClick('user')}} >
       <ListItemIcon>
@@ -31,6 +32,18 @@ export const MainListItems = ({setShow}) => {
         <SupportAgentIcon />
       </ListItemIcon>
       <ListItemText primary="Soporte" />
+    </ListItemButton>
+    <ListItemButton  onClick={()=>{handleClick('change')}}>
+      <ListItemIcon>
+        <ChangeCircleIcon />
+      </ListItemIcon>
+      <ListItemText primary="Cambiar plan" />
+    </ListItemButton>
+    <ListItemButton  onClick={()=>{handleClick('documentation')}}>
+      <ListItemIcon>
+        <ArticleIcon />
+      </ListItemIcon>
+      <ListItemText primary="Documentación API" />
     </ListItemButton>
   </React.Fragment>
   )
