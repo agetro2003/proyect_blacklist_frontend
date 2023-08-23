@@ -5,6 +5,8 @@ import Title from "./Title"
 import { Button, Grid, InputLabel, MenuItem, Select } from "@mui/material"
 import { useState } from "react"
 import Web3 from "web3"
+import API_AXIOS from "../../../settings/AxiosInstance"
+import endpointList from "../../../settings/endpoints"
 
 const ChangePlan = () => {
 
@@ -12,16 +14,16 @@ const ChangePlan = () => {
     
     const [plans, setPlans] = useState([
         {
-            description: "free",
-            cost: 0
+            desc_plan: "free",
+            cost_plan: 0
         },
         {
-            description: "Medium",
-            cost: 0.000001
+            desc_plan: "Medium",
+            cost_plan: 0.000001
         },
         {
-            description: "Premium",
-            cost: 0.000002
+            desc_plan: "Premium",
+            cost_plan: 0.000002
         }
     ])
     const [selectedPlan, setSelectedPlan] = useState(plans[0])
@@ -33,7 +35,18 @@ const ChangePlan = () => {
 }) 
 
 useEffect(()=> {
-if (typeof window.ethereum !== 'undefined') {
+    (
+        async()=>{
+            try {
+                const p = await API_AXIOS.get(endpointList.get_plans)
+                setPlans(p.data.data)
+                console.log(p)
+            } catch (error) {
+            console.log(error)        
+            }
+        }
+    )()
+    if (typeof window.ethereum !== 'undefined') {
     console.log('metamask esta instalado')
     setWeb3(new Web3(window.ethereum))    
 }else{
@@ -79,7 +92,7 @@ const sendTransaction = async() =>{
             to: '0x7cd5feF4E4A548A537073047EBBa51B88e0D9194', //  reemplazar esto con la dirección destino
             gasPrice: web3.utils.toHex(web3.utils.toWei('0.000001', 'gwei')), 
             gasLimit: web3.utils.toHex(21000), 
-            value: web3.utils.toHex(web3.utils.toWei(selectedPlan.cost.toString(), 'ether')),
+            value: web3.utils.toHex(web3.utils.toWei(selectedPlan.cost_plan.toString(), 'ether')),
             chainId: 80001
         };
         console.log(transactionParameters)
@@ -124,7 +137,7 @@ const sendTransaction = async() =>{
 } 
 
 const handleChange = (e)=> {
-    const plan = plans.find((p)=>p.cost ===e.target.value)
+    const plan = plans.find((p)=>p.cost_plan ===e.target.value)
     setSelectedPlan(plan)
 }
     return (
@@ -144,13 +157,13 @@ const handleChange = (e)=> {
               <Select
                labelId="demo-simple-select-label"
                id="demo-simple-select"
-               value={selectedPlan.cost}
+               value={selectedPlan.cost_plan}
                label="Plans"
                onChange={handleChange}
               >
                 {plans.map((plan, idx)=>{
                     return(
-                        <MenuItem key={idx} value={plan.cost}>Plan {plan.description}, {plan.cost}$ </MenuItem>
+                        <MenuItem key={idx} value={plan.cost_plan}>Plan {plan.desc_plan}, {plan.cost_plan}$ </MenuItem>
                     )
                 })}
               </Select>
