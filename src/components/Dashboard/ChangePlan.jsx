@@ -98,7 +98,9 @@ const sendTransaction = async() =>{
         console.log(transactionParameters)
         try {
           await web3.eth.sendTransaction(transactionParameters)
-        .on('transactionHash', function(hash) {
+        .on('transactionHash', async function(hash) {
+            const userEmail = localStorage.getItem('userEmail')
+            const res = await API_AXIOS.put(endpointList.upgrade_plan,{mail_usuario: userEmail.slice(1, userEmail.length -1), id_plan: selectedPlan.id_plan })
             setLoading(false)
             console.log(`Hash de la transacción: ${hash}`)
             setAlert({
