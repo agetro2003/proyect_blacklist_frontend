@@ -14,17 +14,23 @@ const ChangePlan = () => {
     
     const [plans, setPlans] = useState([
         {
+            id_plan:1,
             desc_plan: "free",
+            limit_plan: 20,
             cost_plan: 0
         },
         {
+            id_plan:2,
             desc_plan: "Medium",
+            limit_plan: 1000,
             cost_plan: 0.000001
         },
         {
+            id_plan:3,
             desc_plan: "Premium",
+            limit_plan: 10000,
             cost_plan: 0.000002
-        }
+        },
     ])
     const [selectedPlan, setSelectedPlan] = useState(plans[0])
     const [loading, setLoading] = useState(false)
@@ -40,7 +46,7 @@ useEffect(()=> {
             try {
                 const p = await API_AXIOS.get(endpointList.get_plans)
                 setPlans(p.data.data)
-                console.log(p)
+                console.log(p.data.data)
             } catch (error) {
             console.log(error)        
             }
@@ -100,7 +106,10 @@ const sendTransaction = async() =>{
           await web3.eth.sendTransaction(transactionParameters)
         .on('transactionHash', async function(hash) {
             const userEmail = localStorage.getItem('userEmail')
-            const res = await API_AXIOS.put(endpointList.upgrade_plan,{mail_usuario: userEmail.slice(1, userEmail.length -1), id_plan: selectedPlan.id_plan })
+            const data = {mail_usuario: userEmail.slice(1, userEmail.length -1), id_plan: selectedPlan.id_plan }
+            console.log(data)
+            const res = await API_AXIOS.put(endpointList.upgrade_plan, data)
+            console.log(res)
             setLoading(false)
             console.log(`Hash de la transacción: ${hash}`)
             setAlert({
