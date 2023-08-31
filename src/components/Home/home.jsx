@@ -81,6 +81,7 @@ const Home = () => {
                             color="text.primary"
                             href="/"
                             sx={{ my: 1, mx: 1.5 }}
+                            underline="none"
                         >
                             Home
                         </Link>
@@ -89,14 +90,17 @@ const Home = () => {
                             color="text.primary"
                             href="/Pricing"
                             sx={{ my: 1, mx: 1.5 }}
+                            underline="none"
+
                         >
                             Pricing
                         </Link>
                         <Link
                             variant="button"
                             color="text.primary"
-                            href="#"
+                            href="#footer"
                             sx={{ my: 1, mx: 1.5 }}
+                            underline="none"
                         >
                             Support
                         </Link>
@@ -154,7 +158,7 @@ const Home = () => {
                     py: [3, 6],
                 }}
             >
-                <Grid container spacing={4} justifyContent="space-evenly">
+                <Grid id="footer" container spacing={4} justifyContent="space-evenly">
                     {footers.map((footer) => (
                         <Grid item xs={6} sm={3} key={footer.title}>
                             <Typography variant="h6" color="text.primary" gutterBottom>

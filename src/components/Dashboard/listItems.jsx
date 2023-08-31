@@ -9,6 +9,7 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import ArticleIcon from '@mui/icons-material/Article';
 import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
+import LogoutIcon from '@mui/icons-material/Logout';
 export const MainListItems = ({setShow}) => {
   const handleClick = (target) => {
     setShow(target)
@@ -44,6 +45,12 @@ export const MainListItems = ({setShow}) => {
         <ArticleIcon />
       </ListItemIcon>
       <ListItemText primary="Documentación API" />
+    </ListItemButton>
+    <ListItemButton  onClick={()=>{window.location.assign('/')}}>
+      <ListItemIcon>
+        <LogoutIcon />
+      </ListItemIcon>
+      <ListItemText primary="Regresar a Home" />
     </ListItemButton>
   </React.Fragment>
   )
