@@ -7,7 +7,8 @@ const endpointList = {
     user_info:"/user-info",
     get_plans:"/get-plans",
     upgrade_plan:"/upgrade_plan",
-    upgrade_profile:"/update_profile"
+    upgrade_profile:"/update_profile",
+    create_event: "/create_event"
 }
 
 export default endpointList
