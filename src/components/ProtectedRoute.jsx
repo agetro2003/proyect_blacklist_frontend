@@ -13,7 +13,6 @@ const ProtectedRoute = () => {
         const now = new Date();
         const date = new Date(loginTime);
         date.setMinutes(loginTime.getMinutes() + 15);
-  console.log(date + " " + now)
         if (date < now) {
           navigate('/LogOut');
         }

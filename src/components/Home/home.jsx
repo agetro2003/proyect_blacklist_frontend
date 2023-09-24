@@ -126,28 +126,6 @@ const Home = () => {
                 </React.Fragment>
             </div>
 
-            {/*
-            <Card sx={{ maxWidth: 1500, padding: 5, marginLeft:50, marginRight: 50}}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="400"
-          image='../../../public/imagenHome.jpg'
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            BlackList Proyect
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Bienvenido a nuestro servicio de verificacion de correos insanos. 
-            Donde podras usar nuestra API para validar que los correos que reciba tu aplicacion no sean temporales
-            
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>*/}
-
             {/* Footer */}
             <Container
                 maxWidth="md"
