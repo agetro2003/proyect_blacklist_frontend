@@ -1,131 +1,3 @@
-// import React from "react";
-// import "./pricing.css"
-
-
-
-// const Pricing = () => {
-//     const handleLoginClick = () => {
-//         window.location.href = "/Login";
-//     };
-
-//     return (
-//         <div className="wrapper">
-//             {/* <!-- PRICING-TABLE CONTAINER --> */}
-//             <div className="pricing-table group">
-//                 <h1 className="heading">
-//                     Pricing overview
-//                 </h1>
-//                 {/* <!-- PERSONAL --> */}
-//                 <div className="block personal fl">
-//                     <h2 className="title">Basic</h2>
-//                     {/* <!-- CONTENT --> */}
-//                     <div className="content">
-//                         <p className="price">
-//                             <sup>$</sup>
-//                             <span>00</span>
-//                             <sub>/mo.</sub>
-//                         </p>
-//                         <p className="hint">Perfect for freelancers</p>
-//                     </div>
-//                     {/* <!-- /CONTENT --> */}
-//                     {/* <!-- FEATURES --> */}
-//                     <ul className="features">
-//                         <li><span className="fontawesome-cog"></span>Access to Services</li>
-//                         <li><span className="fontawesome-star"></span>10 Request /mo</li>
-//                         <li><span className="fontawesome-dashboard"></span> # </li>
-//                         <li><span className="fontawesome-cloud"></span> # </li>
-//                     </ul>
-//                     {/* <!-- /FEATURES --> */}
-//                     {/* <!-- PT-FOOTER --> */}
-//                     <div className="pt-footer">
-//                         <button className="cta" onClick={handleLoginClick}>
-//                             <span className="hover-underline-animation"> Sing In </span>
-//                             <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
-//                                 <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
-//                             </svg>
-//                         </button>
-//                     </div>
-//                     {/* <!-- /PT-FOOTER --> */}
-//                 </div>
-//                 {/* <!-- /PERSONAL --> */}
-//                 {/* <!-- PROFESSIONAL --> */}
-//                 <div className="block professional fl">
-//                     <h2 className="title">Standart</h2>
-//                     {/* <!-- CONTENT --> */}
-//                     <div className="content">
-//                         <p className="price">
-//                             <sup>$</sup>
-//                             <span>9.99</span>
-//                             <sub>/mo.</sub>
-//                         </p>
-//                         <p className="hint">Suitable for startups</p>
-//                     </div>
-//                     {/* <!-- /CONTENT --> */}
-//                     {/* <!-- FEATURES --> */}
-//                     <ul className="features">
-//                         <li><span className="fontawesome-cog"></span>Access to Services</li>
-//                         <li><span className="fontawesome-star"></span>50 Request /mo.</li>
-//                         <li><span className="fontawesome-dashboard"></span>#</li>
-//                         <li><span className="fontawesome-cloud"></span>#</li>
-//                     </ul>
-//                     {/* <!-- /FEATURES --> */}
-//                     {/* <!-- PT-FOOTER --> */}
-//                     <div className="pt-footer">
-//                         <button className="cta" onClick={handleLoginClick}>
-//                             <span className="hover-underline-animation"> Buy </span>
-//                             <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
-//                                 <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
-//                             </svg>
-//                         </button>
-//                     </div>
-//                     {/* <!-- /PT-FOOTER --> */}
-//                 </div>
-//                 {/* <!-- /PROFESSIONAL --> */}
-//                 {/* <!-- BUSINESS --> */}
-//                 <div className="block business fl">
-//                     <h2 className="title">Premium</h2>
-//                     {/* <!-- CONTENT --> */}
-//                     <div className="content">
-//                         <p className="price">
-//                             <sup>$</sup>
-//                             <span>19.99</span>
-//                             <sub>/mo.</sub>
-//                         </p>
-//                         <p className="hint">For established business</p>
-//                     </div>
-//                     {/* <!-- /CONTENT --> */}
-
-//                     {/* <!-- FEATURES --> */}
-//                     <ul className="features">
-//                         <li><span className="fontawesome-cog"></span>Access to Services</li>
-//                         <li><span className="fontawesome-star"></span>100 Request /mo.</li>
-//                         <li><span className="fontawesome-dashboard"></span> # </li>
-//                         <li><span className="fontawesome-cloud"></span> # </li>
-//                     </ul>
-//                     {/* <!-- /FEATURES --> */}
-
-//                     {/* <!-- PT-FOOTER --> */}
-//                     <div className="pt-footer">
-//                         <button className="cta" onClick={handleLoginClick}>
-//                             <span className="hover-underline-animation"> Buy </span>
-//                             <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
-//                                 <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
-//                             </svg>
-//                         </button>
-//                     </div>
-//                     {/* <!-- /PT-FOOTER --> */}
-//                 </div>
-//                 {/* <!-- /BUSINESS --> */}
-//             </div>
-//             {/* <!-- /PRICING-TABLE --> */}
-//         </div>
-//     );
-// };
-
-
-
-// export default Pricing
-
 import * as React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -160,41 +32,38 @@ function Copyright(props) {
 const tiers = [
     {
         title: 'Free',
-        subheader: 'For Beginners',
+        subheader: 'Prueba nuestro servicio',
         price: '0',
         description: [
-            '10 users included',
-            '2 GB of storage',
-            'Help center access',
-            'Email support',
+            'Límite 20 consultas',
+            'Validación de correos insanos',
+            'Sin accesso a centro de ayuda'
         ],
-        buttonText: 'Sign up for free',
+        buttonText: 'Registrate gratis',
         buttonVariant: 'outlined',
     },
     {
-        title: 'Pro',
-        subheader: 'Most popular',
-        price: '15',
+        title: 'Premium',
+        subheader: 'Más popular',
+        price: '1',
         description: [
-            '20 users included',
-            '10 GB of storage',
-            'Help center access',
-            'Priority email support',
+            'Límite 1.000 consultas',
+            'Validación de correos insanos',
+            'Acceso a centro de ayuda',
         ],
-        buttonText: 'Get started',
+        buttonText: 'Adquirir plan',
         buttonVariant: 'contained',
     },
     {
-        title: 'Enterprise',
-        subheader: 'Premium Services',
-        price: '30',
+        title: 'Top',
+        subheader: 'Servicio premium',
+        price: '2',
         description: [
-            '50 users included',
-            '30 GB of storage',
-            'Help center access',
-            'Phone & email support',
+            'Límite 10.000 consultas',
+            'Validación de correos insanos',
+            'Acceso a centro de ayuda',
         ],
-        buttonText: 'Contact us',
+        buttonText: 'Adquirir plan',
         buttonVariant: 'outlined',
     },
 ];
@@ -241,7 +110,7 @@ export default function Pricing() {
             >
                 <Toolbar sx={{ flexWrap: 'wrap' }}>
                     <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-                        Dominio de Correos Insanos
+                        BlackList Filter API
                     </Typography>
                     <nav>
                         <Link
@@ -250,7 +119,7 @@ export default function Pricing() {
                             href="/"
                             sx={{ my: 1, mx: 1.5 }}
                         >
-                            Home
+                            Inicio
                         </Link>
                         <Link
                             variant="button"
@@ -258,7 +127,7 @@ export default function Pricing() {
                             href="/Pricing"
                             sx={{ my: 1, mx: 1.5 }}
                         >
-                            Pricing
+                            Planes
                         </Link>
                         <Link
                             variant="button"
@@ -266,7 +135,7 @@ export default function Pricing() {
                             href="#"
                             sx={{ my: 1, mx: 1.5 }}
                         >
-                            Support
+                            Contactanos
                         </Link>
                     </nav>
                     <Button href="/Login" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
@@ -287,7 +156,7 @@ export default function Pricing() {
                     Pricing
                 </Typography>
                 <Typography variant="h5" align="center" color="text.secondary" component="p">
-                    Contamos con una variedad de planes que se ajustan a sus neceidades
+                    Contamos con planes que se ajustan a sus necesidades
                 </Typography>
             </Container>
             {/* End hero unit */}

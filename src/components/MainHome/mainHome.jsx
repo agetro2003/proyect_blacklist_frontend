@@ -9,11 +9,11 @@ const MainHome = () => {
     return (
         <div> 
             <div>
-                <h1> Bienvenido a BlackList Proyect API </h1>
-                <h2> Aqui podras aseguararte de validar los correos recibidos en tu aplicacion web</h2>
+                <h1> Bienvenido a BlackList Filter API </h1>
+                <h2> Aqui podrás aseguararte de validar los correos recibidos en tu aplicacion web</h2>
             </div>
             <div>
-                <h2> Ya posees una cuenta? Inicie sesion o registrese aqui</h2>
+                <h2> ¿Ya tienes una cuenta? Inicie sesión o regístrese aquí</h2>
                 <button onClick={onClick}> Acceder </button>
             </div>
         </div>

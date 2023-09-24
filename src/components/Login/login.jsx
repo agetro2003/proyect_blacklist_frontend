@@ -167,7 +167,7 @@ const [loading, setLoading] = useState(false)
             >
                 <Toolbar sx={{ flexWrap: 'wrap' }}>
                     <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-                        Dominio de Correos Insanos
+                        BlackList Filter API
                     </Typography>
                     <nav>
                         <Link
@@ -176,7 +176,7 @@ const [loading, setLoading] = useState(false)
                             href="/"
                             sx={{ my: 1, mx: 1.5 }}
                         >
-                            Home
+                            Incio
                         </Link>
                         <Link
                             variant="button"
@@ -184,7 +184,7 @@ const [loading, setLoading] = useState(false)
                             href="/Pricing"
                             sx={{ my: 1, mx: 1.5 }}
                         >
-                            Pricing
+                            Planes
                         </Link>
                         <Link
                             variant="button"
@@ -192,7 +192,7 @@ const [loading, setLoading] = useState(false)
                             href="#"
                             sx={{ my: 1, mx: 1.5 }}
                         >
-                            Support
+                            Contactanos
                         </Link>
                     </nav>
                     <Button href="/Login" variant="outlined" sx={{ my: 1, mx: 1.5 }}>

@@ -72,7 +72,7 @@ const PageNotFound = () => {
             >
                 <Toolbar sx={{ flexWrap: 'wrap' }}>
                     <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-                        Dominio de Correos Insanos
+                        BlackList Filter API
                     </Typography>
                     <nav>
                         <Link
@@ -81,7 +81,7 @@ const PageNotFound = () => {
                             href="#"
                             sx={{ my: 1, mx: 1.5 }}
                         >
-                            Support
+                            Contactanos
                         </Link>
                     </nav>
                 </Toolbar>

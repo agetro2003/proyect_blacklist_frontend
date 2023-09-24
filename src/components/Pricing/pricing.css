@@ -233,3 +233,7 @@ a {
     transform-origin: bottom left;
   }
 
+  .nav a {
+    text-decoration: none;
+  }
+

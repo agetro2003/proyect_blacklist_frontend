@@ -73,7 +73,7 @@ const Home = () => {
             >
                 <Toolbar sx={{ flexWrap: 'wrap' }}>
                     <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-                        Dominio de Correos Insanos
+                        BlackList Filter API
                     </Typography>
                     <nav>
                         <Link
@@ -83,7 +83,7 @@ const Home = () => {
                             sx={{ my: 1, mx: 1.5 }}
                             underline="none"
                         >
-                            Home
+                            Inicio
                         </Link>
                         <Link
                             variant="button"
@@ -93,7 +93,7 @@ const Home = () => {
                             underline="none"
 
                         >
-                            Pricing
+                            Planes
                         </Link>
                         <Link
                             variant="button"
@@ -102,7 +102,7 @@ const Home = () => {
                             sx={{ my: 1, mx: 1.5 }}
                             underline="none"
                         >
-                            Support
+                            Contactanos
                         </Link>
                     </nav>
                     <Button href="/Login" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
@@ -116,11 +116,11 @@ const Home = () => {
                 <React.Fragment>
                     <CardContent>
                         <Typography variant="h2" component="div">
-                        Bienveido a BlackList Proyect
+                        Bienvenido a BlackList Filter API
                         Su API para validar correos de confianza
                         </Typography>
                         <Typography variant="h5">
-                            Con nuestro servicio podras identificar correos temporales o invalidos.
+                            Con nuestro servicio podras identificar correos temporales o inválidos.
                          </Typography>
                     </CardContent>
                 </React.Fragment>
