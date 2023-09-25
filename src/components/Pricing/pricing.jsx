@@ -159,7 +159,7 @@ export default function Pricing() {
                     color="text.primary"
                     gutterBottom
                 >
-                    Pricing
+                    Planes
                 </Typography>
                 <Typography variant="h5" align="center" color="text.secondary" component="p">
                     Contamos con planes que se ajustan a sus necesidades
