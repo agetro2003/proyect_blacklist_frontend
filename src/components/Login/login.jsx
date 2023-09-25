@@ -211,7 +211,7 @@ const [loading, setLoading] = useState(false)
                     <div className="row full-height justify-content-center">
                         <div className="col-12 text-center align-self-center py-5">
                             <div className="section pb-5 pt-5 pt-sm-2 text-center">
-                                <h6 className="mb-0 pb-3 c"><span>Log In </span><span>Sign Up</span></h6>
+                                <h6 className="mb-0 pb-3 c"><span>Iniciar sesion </span><span>Registrarse</span></h6>
                                 <input className="checkbox" type="checkbox" id="reg-log" name="reg-log" />
                                 <label htmlFor="reg-log"></label>
                                 <div className="card-3d-wrap mx-auto">
@@ -219,17 +219,17 @@ const [loading, setLoading] = useState(false)
                                         <div className="card-front">
                                             <div className="center-wrap">
                                                 <div className="section text-center">
-                                                    <h4 className="mb-4 pb-3 login-titulo">Log In</h4>
+                                                    <h4 className="mb-4 pb-3 login-titulo">Iniciar sesion</h4>
                                                     <div className="form-group">
-                                                    <input onChange={handleInputs}  name="mail_usuario" type="email" value={data.mail_usuario} className="form-style" placeholder="Email" />
+                                                    <input onChange={handleInputs}  name="mail_usuario" type="email" value={data.mail_usuario} className="form-style" placeholder="Correo electronico" />
                                                         <i className="input-icon uil uil-at"></i>
                                                     </div>
                                                     <div className="form-group mt-2">
-                                                    <input onChange={handleInputs} name="pswd_usuario" type="password" value={data.pswd_usuario} className="form-style" placeholder="Password" />
+                                                    <input onChange={handleInputs} name="pswd_usuario" type="password" value={data.pswd_usuario} className="form-style" placeholder="Contraseña" />
                                                         <i className="input-icon uil uil-lock-alt"></i>
                                                     </div>
                                                     <div className="login-boton-holder">
-                                                        <button onClick={handleLogin} className="btn mt-4">Login</button>
+                                                        <button onClick={handleLogin} className="btn mt-4">Iniciar sesion</button>
                                                     </div>
                                                     <p className="mb-0 text-center"><a href="#" className="link">¿Olvidaste la contraseña?</a></p>
                                                 </div>
@@ -238,33 +238,34 @@ const [loading, setLoading] = useState(false)
                                         <div className="card-back">
                                             <div className="center-wrap">
                                                 <div className="section text-center">
-                                                    <h4 className="mb-3 pb-3 login-titulo">Sign Up</h4>
+                                                    <h4 className="mb-3 pb-3 login-titulo">Registrarse</h4>
                                                     <div className="form-group">
-                                                    <input onChange={handleInputs} name="name_usuario" type="text" value={data.name_usuario} className="form-style" placeholder="Full Name" />
+                                                    <input onChange={handleInputs} name="name_usuario" type="text" value={data.name_usuario} className="form-style" placeholder="Nombre completo" />
                                                         <i className="input-icon uil uil-user"></i>
                                                     </div>
                                                     <div className="form-group mt-2">
-                                                    <input onChange={handleInputs} name="tlfn_usuario" type="tel" value={data.tlfn_usuario} className="form-style" placeholder="Phone Number" />
+                                                    <input onChange={handleInputs} name="tlfn_usuario" type="tel" value={data.tlfn_usuario} className="form-style" placeholder="Numero de telefono" />
                                                         <i className="input-icon uil uil-phone"></i>
                                                     </div>
                                                     <div className="form-group mt-2">
-                                                    <input onChange={handleInputs} name="mail_usuario" type="email" value={data.mail_usuario} className="form-style" placeholder="Email" />
+                                                    <input onChange={handleInputs} name="mail_usuario" type="email" value={data.mail_usuario} className="form-style" placeholder="Correo electronico" />
                                                         <i className="input-icon uil uil-at"></i>
                                                     </div>
                                                     <div className="form-group mt-2">
-                                                    <input onChange={handleInputs} name="pswd_usuario" type="password" value={data.pswd_usuario} className="form-style" placeholder="Password" />
+                                                    <input onChange={handleInputs} name="pswd_usuario" type="password" value={data.pswd_usuario} className="form-style" placeholder="Contraseña" />
                                                         <i className="input-icon uil uil-lock-alt"></i>
                                                     </div>
                                                     <div className="form-group mt-2">
-                                                    <input onChange={handleInputs} name="val_pswd" type="password" value={data.val_pswd} className="form-style" placeholder="Validate password" />
+                                                    <input onChange={handleInputs} name="val_pswd" type="password" value={data.val_pswd} className="form-style" placeholder="Validar contraseña" />
                                                         <i className="input-icon uil uil-lock-alt"></i>
                                                     </div>
                                                     <div className="form-group mt-2">
-                                                    <input onChange={handleInputs} name="birth_usuario" type="date" value={data.birth_usuario} className="form-style" placeholder="Birthdate"/>
+                                                       {/* <label htmlFor="birth_usuario">Fecha de nacimiento</label>*/}
+                                                    <input onChange={handleInputs} name="birth_usuario" type="date" value={data.birth_usuario} className="form-style"/>
                                                         <i className="input-icon uil uil-lock-alt"></i>
                                                     </div>
                                                     <div className="login-boton-holder">
-                                                    <button onClick={handleRegister} className="btn mt-4">Register</button>
+                                                    <button onClick={handleRegister} className="btn mt-4">Registrar</button>
                                                     </div>
                                                 </div>
                                             </div>
