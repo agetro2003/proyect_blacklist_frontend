@@ -18,13 +18,13 @@ export default function EmailValidationForm() {
     content: ""
 }) 
     const [email, setMail] = useState('')
-
+    const [userMail, setUserMail] = useState(localStorage.getItem('userEmail').slice(1, localStorage.getItem('userEmail').length -1));
     const handleClick =  async(e) => {
       setLoading(true)
       
       try {
           const validateEmail = await API_AXIOS.post(endpointList.validate_email, {email})
-          const validateDomain = await API_AXIOS.post(endpointList.validate_domain, {email})
+          const validateDomain = await API_AXIOS.post(endpointList.validate_domain, {email, mail_usuario: userMail})
           setLoading(false)
           setAlert({
               active: true,
