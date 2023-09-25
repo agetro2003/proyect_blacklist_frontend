@@ -118,6 +118,8 @@ export default function Pricing() {
                             color="text.primary"
                             href="/"
                             sx={{ my: 1, mx: 1.5 }}
+                            underline="none"
+
                         >
                             Inicio
                         </Link>
@@ -126,14 +128,18 @@ export default function Pricing() {
                             color="text.primary"
                             href="/Pricing"
                             sx={{ my: 1, mx: 1.5 }}
+                            underline="none"
+
                         >
                             Planes
                         </Link>
                         <Link
                             variant="button"
                             color="text.primary"
-                            href="#"
+                            href="/Contacto"
                             sx={{ my: 1, mx: 1.5 }}
+                            underline="none"
+
                         >
                             Contactanos
                         </Link>

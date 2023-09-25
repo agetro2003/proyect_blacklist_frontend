@@ -18,6 +18,14 @@ import Container from '@mui/material/Container';
 import { CardActionArea, CardContent, CardMedia } from "@mui/material";
 import styles from "./home.module.css"
 // import MainHome from "../MainHome/mainHome";
+import Avatar from '@mui/material/Avatar';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import SendIcon from '@mui/icons-material/Send';
+import { useState } from "react";
 
 function Copyright(props) {
     return (
@@ -59,7 +67,17 @@ const footers = [
 
 const defaultTheme = createTheme();
 
-const Home = () => {
+const Contact = () => {
+    const [message, setMessage] = useState('')
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        console.log({
+          email: data.get('email'),
+          password: data.get('password'),
+        });
+      };
+    
     return (
         // Navbar
         <ThemeProvider theme={defaultTheme}>
@@ -111,21 +129,57 @@ const Home = () => {
                 </Toolbar>
             </AppBar>
 
-            <div className={styles.home}>
-                <img src="\imagenHome.jpg" alt="imagenFondo" width={800} height={600}/>
-                <React.Fragment>
-                    <CardContent>
-                        <Typography variant="h2" component="div">
-                        Bienvenido a BlackList Filter API
-                        Su API para validar correos de confianza
-                        </Typography>
-                        <Typography variant="h5">
-                            Con nuestro servicio podras identificar correos temporales o inválidos.
-                         </Typography>
-                    </CardContent>
-                </React.Fragment>
-            </div>
-
+            <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <SendIcon />
+          </Avatar>
+          <Typography component="h1" variant="h6">
+            Envie su correo junto con lo que desee informarmos
+          </Typography>
+          <Typography component="h1" variant="h7">
+            Le enviaremos una respuesta lo mas pronto posible
+          </Typography>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Correo Electrónico"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+            sx={
+                {
+                    width: '100%'
+                }
+            }
+          id="outlined-multiline-static"
+          label="Escriba aqui su mensaje*"
+          multiline
+          rows={4}
+          value={message}
+        />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Enviar
+            </Button>
+           
+          </Box>
+        </Box>
             {/* Footer */}
             <Container
                 maxWidth="md"
@@ -161,4 +215,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Contact;

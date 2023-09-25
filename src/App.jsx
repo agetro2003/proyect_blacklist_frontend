@@ -11,6 +11,7 @@ import PageNotFound from './components/PageNotFound/PageNotFound';
 import UnAuthorized from './components/UnAuthorized/UnAuthorized';
 import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './components/Dashboard/Dashboard';
+import Contact from "./components/Contact/Contact";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/Login" element={<Login />} />
         <Route exact path="/Pricing" element={<Pricing />} />
+        <Route exact path="/Contacto" element={<Contact/>} />
         <Route element={<ProtectedRoute />}>
           <Route exact path='/main' element={<Dashboard />}></Route>
 
