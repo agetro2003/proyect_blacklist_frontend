@@ -98,7 +98,7 @@ const sendTransaction = async() =>{
             to: '0x7cd5feF4E4A548A537073047EBBa51B88e0D9194', //  reemplazar esto con la dirección destino
             gasPrice: web3.utils.toHex(web3.utils.toWei('0.000001', 'gwei')), 
             gasLimit: web3.utils.toHex(21000), 
-            value: web3.utils.toHex(web3.utils.toWei(selectedPlan.cost_plan.toString(), 'ether')),
+            value: web3.utils.toHex(web3.utils.toWei(/*selectedPlan.cost_plan.toString()*/'0', 'ether')),
             chainId: 80001
         };
         console.log(transactionParameters)

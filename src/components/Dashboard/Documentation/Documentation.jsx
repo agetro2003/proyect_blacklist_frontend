@@ -8,7 +8,7 @@ const Documentation = () => {
   const pythonCode = `
   import requests
 
-  url = "https://api.example.com/verify-email"
+  url = "https://api.example.com/verify_email"
   headers = {
       "API_KEY": "your_api_key_here"
   }
@@ -23,7 +23,7 @@ const Documentation = () => {
   const nodeCode = `
   const axios = require('axios');
 
-  const url = 'https://api.example.com/verify-email';
+  const url = 'https://api.example.com/verify_email';
   const headers = {
     'API_KEY': 'your_api_key_here'
   };
@@ -40,7 +40,7 @@ const Documentation = () => {
     });
   `;
 const nodeCode2 = `
-const apiUrl = 'https://api.example.com/verify-email';
+const apiUrl = 'https://api.example.com/verify_email';
 const apiKey = 'your_api_key_here';
 const email = 'example@example.com';
 
