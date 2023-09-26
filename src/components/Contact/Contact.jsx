@@ -3,10 +3,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 // import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
- import Card from '@mui/material/Card';
-// import CardActions from '@mui/material/CardActions';
-// import CardContent from '@mui/material/CardContent';
-// import CardHeader from '@mui/material/CardHeader';
+import Card from '@mui/material/Card';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 // import StarIcon from '@mui/icons-material/StarBorder';
@@ -71,11 +68,7 @@ const Contact = () => {
     const [message, setMessage] = useState('')
     const handleSubmit = (event) => {
         event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-          email: data.get('email'),
-          password: data.get('password'),
-        });
+        alert("enviado")
       };
     
     return (
@@ -158,6 +151,16 @@ const Contact = () => {
               autoFocus
             />
             <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="nombre"
+              label="Nombre completo"
+              name="nombre"
+              autoComplete="nombre"
+              autoFocus
+            />
+            <TextField
             sx={
                 {
                     width: '100%'
@@ -168,6 +171,9 @@ const Contact = () => {
           multiline
           rows={4}
           value={message}
+          onChange={(e)=>{
+            setMessage(e.target.value)
+          }}
         />
             <Button
               type="submit"

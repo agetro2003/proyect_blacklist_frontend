@@ -20,18 +20,22 @@ export default function SupportForm() {
   title: "",
   content: ""
 }) 
+
   const agendarReunion = async(event) => {
     event.preventDefault();
+    const date = new Date(fechaSoporte)
+  const timeString = date.toLocaleTimeString('en-US', { hour12: false });
+  const dateTimeString = date.toISOString().slice(0, 10) + 'T' + timeString;
     let data = {
       event_title: motivo,
       event_desc: descripcion,
-      start_date: fechaSoporte,
+      start_date: dateTimeString,
       mail_usuario: localStorage.getItem('userEmail').slice(1, localStorage.getItem('userEmail').length -1)
     }     
      setLoading(true)
+    
     try {
       const res = await API_AXIOS.post(endpointList.create_event, data)
-      console.log(res)
       setAlert({
         active:true,
         title: 'Mensaje',
@@ -39,7 +43,6 @@ export default function SupportForm() {
       })
       setLoading(false)
     } catch (error) {
-      console.log(error)
       setLoading(false)
           try {
             setAlert({
@@ -79,14 +82,30 @@ export default function SupportForm() {
           />
         </Grid>
         <Grid item xs={12}>
-          <TextareaAutosize
+          {/*<TextareaAutosize
             required
             minRows={3}
             fullWidth
             placeholder="Descripción"
             value={descripcion}
             onChange={(event) => setDescripcion(event.target.value)}
-          />
+          />*/}
+
+<TextField
+            sx={
+                {
+                    width: '100%'
+                }
+            }
+          id="outlined-multiline-static"
+          label="Escriba aqui su mensaje*"
+          multiline
+          rows={4}
+          value={descripcion}
+          onChange={(e)=>{
+            setDescripcion(e.target.value)
+          }}
+        />
         </Grid>
         <Grid item xs={12}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
