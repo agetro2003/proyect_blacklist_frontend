@@ -23,6 +23,8 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import SendIcon from '@mui/icons-material/Send';
 import { useState } from "react";
+import Alert from "../Alert/Alert";
+import Overlay from "../Overlay/Overlay";
 
 function Copyright(props) {
     return (
@@ -66,14 +68,40 @@ const defaultTheme = createTheme();
 
 const Contact = () => {
     const [message, setMessage] = useState('')
+    const [asunto, setAsunto] = useState('')
+    const [correo, setCorreo] = useState('')
+    const [alert, setAlert] = useState({
+        active:false,
+        title: "",
+        content: ""
+    }) 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert("enviado")
+        if (message == '' || asunto == '' || correo == ''){
+            setAlert({
+                active:true,
+                title:'Error',
+                content: 'Por favor llene todos los campos'
+            })
+        }
+        else {
+        setAlert({
+                active:true,
+                title:'Enviado correctamente',
+                content: 'Proximamente le daremos una respuesta'
+            })
       };
-    
+    }
     return (
         // Navbar
         <ThemeProvider theme={defaultTheme}>
+             {alert.active && (
+                <Alert open={alert.active} setOpen={setAlert} title={alert.title} content={alert.content}></Alert>
+            )}
+            {loading && (
+             <Overlay>
+             </Overlay>
+             )}
             <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
             <CssBaseline />
             <AppBar
