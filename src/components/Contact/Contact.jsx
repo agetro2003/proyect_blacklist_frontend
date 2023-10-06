@@ -182,6 +182,10 @@ const Contact = () => {
               name="email"
               autoComplete="email"
               autoFocus
+              value={correo}
+              onChange={(e)=> {
+                setCorreo(e.target.value)
+              }}
             />
             <TextField
               margin="normal"
@@ -192,6 +196,10 @@ const Contact = () => {
               name="nombre"
               autoComplete="nombre"
               autoFocus
+              value={asunto}
+              onChange={(e) => {
+                setAsunto(e.target.value)
+              }}
             />
             <TextField
             sx={
