@@ -75,9 +75,12 @@ const Contact = () => {
         title: "",
         content: ""
     }) 
+    const [loading, setLoading] = useState(false)
     const handleSubmit = (event) => {
         event.preventDefault();
+        setLoading(true)
         if (message == '' || asunto == '' || correo == ''){
+            setLoading(false)
             setAlert({
                 active:true,
                 title:'Error',
@@ -85,6 +88,8 @@ const Contact = () => {
             })
         }
         else {
+            setLoading(false)
+
         setAlert({
                 active:true,
                 title:'Enviado correctamente',
